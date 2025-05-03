@@ -1,3 +1,4 @@
+![1339848135397240631](https://github.com/user-attachments/assets/fe91fbed-16b3-48d0-b4d5-57db3a76fe48)
 # 🌍 Voice of Reconciliation and Pacification East Africa (VORP-EA) — Website Revamp
 
 Welcome to the official repository for the complete redesign of the **VORP-EA** website — a multi-page, SEO-optimized, lightning-fast site that embodies our mission of healing, peace, and progress in East Africa.
