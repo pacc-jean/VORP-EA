@@ -32,7 +32,7 @@ To build a modern digital presence for VORP-EA that:
 - `Volunteer` — How to get involved
 - `Donate` — Make a difference
 - `Contact Us` — Newsletter & communication
-- Global Special Events Display — e.g. Mental Health Awareness Month
+- `Global Special Events Display` — e.g. Mental Health Awareness Month
 
 ## ✨ Key Features
 
@@ -42,6 +42,7 @@ To build a modern digital presence for VORP-EA that:
 - Newsletter signup
 - Multi-page structure with smooth routing
 - Vibrant yet professional design system
+- Mobile-first approach
 
 ## 🚀 Getting Started
 
