@@ -1,9 +1,22 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-[#e3f2fd] via-white to-[#fce4ec] py-24 px-6 text-center">
+    <section className="py-24 px-6 text-center">
+      {/* Logo - positioned top-left */}
+        <div className="absolute left-4 top-4">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="VORP-EA Logo"
+              width={300}
+              height={150}
+              className="object-contain"
+            />
+          </Link>
+        </div>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

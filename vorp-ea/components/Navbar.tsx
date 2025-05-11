@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+//import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -25,24 +25,10 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo and name */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/logo.png"
-            alt="VORP-EA Logo"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
-          <span className="text-xl font-bold text-gray-900 hidden sm:inline">
-            VORP-EA
-          </span>
-        </Link>
-
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between relative">
         {/* Desktop Nav Links */}
         {isLargeScreen ? (
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 ml-auto"> {/* Adjusted to align links to the right */}
             <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
             <Link href="/programs" className="text-gray-700 hover:text-blue-600 font-medium">Programs</Link>
             <Link href="/volunteer" className="text-gray-700 hover:text-blue-600 font-medium">Volunteer</Link>
