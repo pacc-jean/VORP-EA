@@ -67,7 +67,7 @@ This project is driven by passion and purpose. If you'd like to contribute — w
 ## 📬 Contact
 For collaboration or general inquiries, reach us via:
 
-[NGO EMAIL] – info@vorp-ea.org
-[DEV EMAIL] – jeanluc.xii.iv@gmail.com
+`NGO EMAIL` – info@vorp-ea.org
+`DEV EMAIL` – jeanluc.xii.iv@gmail.com
 
 “Peace begins with understanding.” – VORP-EA
