@@ -27,11 +27,11 @@ To build a modern digital presence for VORP-EA that:
 
 ## 📄 Pages Overview
 
-- `Home` — Vision, mission, goals, and welcome message with events
-- `Programs` — Our work and initiatives
-- `Volunteer` — How to get involved
-- `Donate` — Make a difference
-- `Contact Us` — Newsletter & communication
+- `Landing Page` — Trailing Hero with a call to action, Overview of VORP-EA, Statements section[mission, vision, goal], Stories of Resilience, Newsletter signup, Trailing Hero with a call to action 
+- `Join Us` — Volunteer, Partner with us, Learn&Share
+- `What We Do` — Programs, Our Work, Our Impact
+- `Who We Are` — About us, Our Team, Our History, Our Partners
+- `Donate` — Donation page with a forms[One-time donation, Recurring donation]
 - `Global Special Events Display` — e.g. Mental Health Awareness Month
 
 ## ✨ Key Features
