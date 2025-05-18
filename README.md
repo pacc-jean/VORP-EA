@@ -45,21 +45,27 @@ To build a modern digital presence for VORP-EA that:
 - Mobile-first approach
 
 ## 🚀 Getting Started
-
 ```bash
 # Clone the repository
 git clone https://github.com/pacc-jean/VORP-EA.git
 
 # Navigate into the project directory
-cd VORP-EA
+cd VORP-EA/vorp-ea
+
+# Install and activate the correct Node version
+mise install
 
 # Install dependencies
 npm install
 
-# Run the development server
+# Start the development server
 npm run dev
 ```
-Open http://localhost:3000 to see the magic ✨
+
+💡 Heads up: This project uses mise to manage Node versions.
+It ensures everyone on the team (or future you) is using the same environment.
+
+🔗 Then, open http://localhost:3000 to see the magic ✨
 
 ## 💡 Contributing
 This project is driven by passion and purpose. If you'd like to contribute — whether it's design ideas, content, or dev work — feel free to fork, PR, or drop an issue.
