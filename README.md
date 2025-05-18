@@ -16,14 +16,14 @@ To build a modern digital presence for VORP-EA that:
 
 ## 🛠️ Tech Stack
 
-| Layer     | Tech                          |
-|-----------|-------------------------------|
-| Framework | [Next.js](https://nextjs.org) |
-| Styling   | [Tailwind CSS](https://tailwindcss.com) |
-| Animations | [Framer Motion](https://www.framer.com/motion/) |
-| Language  | TypeScript                    |
-| Deployment | [Vercel](https://vercel.com) |
-| Forms     | React Hook Form + Mailchimp integration |
+| Layer      | Tech                                                                   |
+| ---------- | ---------------------------------------------------------------------- |
+| Framework  | [React](https://reactjs.org) + [Vite](https://vitejs.dev)              |
+| Styling    | [Tailwind CSS](https://tailwindcss.com)                                |
+| Animations | [Framer Motion](https://www.framer.com/motion/)                        |
+| Language   | TypeScript                                                             |
+| Deployment | [Netlify](https://www.netlify.com) or [Vercel](https://vercel.com)     |
+| Forms      | [React Hook Form](https://react-hook-form.com) + Mailchimp integration |
 
 ## 📄 Pages Overview
 
