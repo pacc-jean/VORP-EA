@@ -24,7 +24,7 @@ export default function LeadingHero() {
         >
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Rebuilding Hope,<br />
-            <span className="italic text-red-600">One Voice at a Time</span>
+            <span className="italic text-green-600">One Voice at a Time</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             Empowering East African communities through dialogue, programs, and peacebuilding.
@@ -39,7 +39,7 @@ export default function LeadingHero() {
                   label: "Support Our Work",
                 })
               }
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold shadow transition inline-flex items-center gap-1"
+              className="bg-green-600 hover:bg-gray-900 text-white hover:text-green-900 px-6 py-3 rounded-full font-semibold shadow transition inline-flex items-center gap-1"
             >
               Support Our Work <span className="text-lg">&#x203A;</span>
             </a>
@@ -52,7 +52,7 @@ export default function LeadingHero() {
                   label: "What We Do",
                 })
               }
-              className="bg-white text-red-600 hover:text-red-700 px-6 py-3 rounded-full font-semibold border border-white shadow transition inline-flex items-center gap-1"
+              className="bg-white hover:bg-gray-900 text-green-900 hover:text-white px-6 py-3 rounded-full font-semibold shadow transition inline-flex items-center gap-1"
             >
               What We Do <span className="text-lg">&#x203A;</span>
             </a>
