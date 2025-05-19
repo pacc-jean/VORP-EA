@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { trackEvent } from "../lib/analytics";
+import { Link } from "react-router-dom";
 
 const navItems = [
   {
@@ -30,9 +31,9 @@ export default function Navbar() {
         {/* Row 1: Logo + Nav Links + Donate */}
         <div className="flex items-center justify-between pt-4 pb-2">
           {/* Logo */}
-          <a href="/" className="flex items-center flex-shrink-0">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img src="/logo.png" alt="Logo" className="h-24 w-24" />
-          </a>
+          </Link>
 
           {/* Nav Links */}
           <div className="flex-1 flex justify-center items-center space-x-8">

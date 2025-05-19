@@ -6,6 +6,7 @@ import {
   FaTiktok,
 } from "react-icons/fa";
 import { trackEvent } from "../lib/analytics";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
   {
@@ -52,9 +53,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-8 md:gap-[14rem]">
         {/* Logo & Copy */}
         <div className="flex flex-col space-y-4 max-w-xs">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src="/logo.png" alt="Logo" className="h-24 w-24" />
-          </a>
+          </Link>
           <p className="text-gray-600 text-sm leading-relaxed">
             VORP-EA — Voice of Reconciliation and Pacification East Africa. Bringing communities together with heart & impact.
           </p>
