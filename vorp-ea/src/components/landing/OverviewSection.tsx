@@ -34,7 +34,13 @@ const focusAreas = [
 
 export default function OverviewSection() {
 	return (
-		<section className="bg-gray-50 py-20">
+		<section
+          className="bg-gray-50 py-20"
+          style={{
+            backgroundImage: "url('/grain-texture.png')",
+            backgroundSize: "repeat",
+          }}
+          >
 			<div className="max-w-7xl mx-auto px-6">
 				<motion.div
 					className="text-center mb-16"
