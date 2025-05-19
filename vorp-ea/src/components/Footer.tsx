@@ -1,9 +1,16 @@
-import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTiktok,
+} from "react-icons/fa";
+
 
 const footerLinks = [
   {
     title: "Company",
-    links: ["About Us", "Careers", "Press", "Blog"],
+    links: ["About Us", "Careers", "Reports", "Blog"],
   },
   {
     title: "Resources",
@@ -13,34 +20,40 @@ const footerLinks = [
 
 const socialLinks = [
   {
-    name: "Twitter",
-    icon: <Twitter className="w-5 h-5" />,
-    href: "#",
+    name: "Facebook",
+    icon: <FaFacebookF size={20} />,
+    href: "https://www.facebook.com/VORP-EA",
   },
   {
-    name: "Facebook",
-    icon: <Facebook className="w-5 h-5" />,
+    name: "Twitter",
+    icon: <FaTwitter size={20} />,
     href: "#",
   },
   {
     name: "Instagram",
-    icon: <Instagram className="w-5 h-5" />,
-    href: "#",
+    icon: <FaInstagram size={20} />,
+    href: "https://www.instagram.com/vorp_ke/",
+  },
+  {
+    name: "TikTok",
+    icon: <FaTiktok size={20} />,
+    href: "https://www.tiktok.com/@vorpea",
   },
   {
     name: "LinkedIn",
-    icon: <Linkedin className="w-5 h-5" />,
+    icon: <FaLinkedinIn size={20} />,
     href: "#",
   },
 ];
 
+
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-10 mt-20">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-12">
+    <footer className="bg-white border-t border-gray-200 pt-6 pb-4 md:pt-10 md:pb-2 mt-20">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-8 md:gap-[14rem]">
         {/* Logo & Copy */}
         <div className="flex flex-col space-y-4 max-w-xs">
-          <img src="/logo.png" alt="Logo" className="h-16 w-16" />
+          <img src="/logo.png" alt="Logo" className="h-20 w-20" />
           <p className="text-gray-600 text-sm leading-relaxed">
             VORP-EA — Voice of Reconciliation and Pacification East Africa. Bringing communities together with heart & impact.
           </p>
@@ -48,7 +61,7 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
-        <div className="flex flex-1 justify-between max-w-4xl">
+        <div className="flex flex-1 gap-24 max-w-4xl">
           {footerLinks.map(({ title, links }) => (
             <div key={title} className="flex flex-col space-y-3">
               <h3 className="font-semibold text-gray-900">{title}</h3>
