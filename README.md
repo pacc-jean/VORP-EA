@@ -27,7 +27,7 @@ To build a modern digital presence for VORP-EA that:
 
 ## 📄 Pages Overview
 
-- `Landing Page` — Trailing Hero with a call to action, Overview of VORP-EA, Statements section[mission, vision, goal], Stories of Resilience, Newsletter signup, Trailing Hero with a call to action 
+- `Landing Page` — Leading Hero with a call to action, Overview of VORP-EA, Statements section[mission, vision, goal], Stories of Resilience, Newsletter signup, Trailing Hero with a call to action 
 - `Join Us` — Volunteer, Partner with us, Learn&Share
 - `What We Do` — Programs, Our Work, Our Impact
 - `Who We Are` — About us, Our Team, Our History, Our Partners
