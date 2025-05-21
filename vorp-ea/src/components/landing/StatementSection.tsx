@@ -61,14 +61,14 @@ export default function StatementSection() {
 
 	return (
 		<section
-			className="relative py-28 bg-gray-50 text-gray-900 overflow-hidden"
+			className="relative py-2 px-4 bg-gray-50 text-gray-900 overflow-hidden"
 			style={{
 				backgroundImage: "url('/grain-texture.png')",
 				backgroundSize: "repeat",
 			}}
 		>
-			<div className="max-w-4xl mx-auto text-center px-6">
-				<h2 className="text-4xl md:text-5xl font-bold mb-12 font-serif tracking-tight">
+			<div className="max-w-4xl mx-auto text-center">
+				<h2 className="text-4xl md:text-5xl font-bold mb-2 font-serif tracking-tight">
 					Our Mission, Vision & Goal
 				</h2>
 

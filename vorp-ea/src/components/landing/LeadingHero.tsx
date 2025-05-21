@@ -22,7 +22,7 @@ export default function LeadingHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
             Rebuilding Hope,<br />
             <span className="italic text-green-600">One Voice at a Time</span>
           </h1>

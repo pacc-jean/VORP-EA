@@ -58,7 +58,7 @@ export default function OverviewSection() {
 				>
 					{/* Top Line - Bold Gradient */}
 					<motion.h2
-						className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-pink-500"
+						className="text-4xl md:text-5xl font-serif font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-pink-500"
 						variants={{
 							hidden: { opacity: 0, y: 20 },
 							visible: { opacity: 1, y: 0 },
@@ -69,7 +69,7 @@ export default function OverviewSection() {
 
 					{/* Bottom Line - Italic, Muted, Classy */}
 					<motion.h3
-						className="mt-2 text-xl italic font-medium text-gray-500"
+						className="mt-2 text-xl italic font-serif font-medium text-gray-500"
 						variants={{
 							hidden: { opacity: 0, y: 20 },
 							visible: { opacity: 1, y: 0 },
