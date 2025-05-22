@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Link } from "react-router-dom";
 import { trackEvent } from "../../lib/analytics";
 
 export default function TrailingHero() {
@@ -39,8 +38,8 @@ export default function TrailingHero() {
 						<p className="text-lg drop-shadow-sm">
 							Your support fuels peace, hope, and healing in East Africa. Help us build a resilient tomorrow.
 						</p>
-						<Link
-							to="/donate"
+						<a
+							href="#"
 							onClick={() =>
 								trackEvent({
 									action: "click_donate",
@@ -51,7 +50,7 @@ export default function TrailingHero() {
 							className="bg-gradient-to-r from-red-500 via-pink-600 to-red-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:animate-pulse inline-block w-max"
 						>
 							Donate
-						</Link>
+						</a>
 					</motion.div>
 				</div>
 			</div>
