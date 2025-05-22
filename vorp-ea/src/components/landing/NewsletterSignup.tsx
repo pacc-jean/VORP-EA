@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { trackEvent } from "../../lib/analytics";
 
 type FormData = {
   EMAIL: string;
@@ -12,16 +13,6 @@ export default function NewsletterSignup() {
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
   const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = () => {
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "submit", {
-        event_category: "Newsletter",
-        event_label: "Signup Form Submission",
-      });
-    }
-    setSubmitted(true);
-  };
 
   return (
     <section className="px-6 py-16 bg-[#032B41] text-white">
@@ -41,7 +32,14 @@ export default function NewsletterSignup() {
           action="https://vorp-ea.us18.list-manage.com/subscribe/post?u=63ff4ba014726e6bf07578657&amp;id=ef17e3a9fd&amp;f_id=00c3b7e6f0"
           method="POST"
           target="_blank"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(() => {
+            trackEvent({
+              action: "submit",
+              category: "Newsletter",
+              label: "Signup Form Submission",
+            });
+            setSubmitted(true);
+          })}
           className="w-full md:max-w-md space-y-2"
         >
           <div className="flex flex-col sm:flex-row gap-2">
