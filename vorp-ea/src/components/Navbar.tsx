@@ -33,7 +33,7 @@ export default function Navbar() {
 
 	return (
 		<header
-			className={`fixed w-full top-0 z-50 transition-colors duration-300 ${
+			className={`hidden md:block fixed w-full top-0 z-50 transition-colors duration-300 ${
 				scrolled ? "bg-white shadow-sm" : "bg-transparent"
 			}`}
 		>

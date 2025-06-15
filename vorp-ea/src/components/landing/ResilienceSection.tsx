@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useSwipeable } from "react-swipeable";
 import doubleQuotes from "../../assets/double-quotes.png";
 import { stories } from "../../assets/resilience-stories";
 import { trackEvent } from "../../lib/analytics";
@@ -17,6 +18,14 @@ export default function ResilienceSection() {
       behavior: "smooth",
     });
   };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => scroll("right"),
+    onSwipedRight: () => scroll("left"),
+    delta: 40,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
 
   return (
     <section
@@ -70,8 +79,8 @@ export default function ResilienceSection() {
           </button>
         </div>
 
-        {/* Scrollable Stories */}
-        <div ref={scrollRef} className="overflow-x-auto scroll-smooth pb-6">
+        {/* Scrollable Stories w/ swipe handlers */}
+        <div {...handlers} ref={scrollRef} className="overflow-x-auto scroll-smooth pb-6">
           <div className="flex gap-8 snap-x snap-mandatory px-1">
             {stories.map((story, idx) => (
               <div

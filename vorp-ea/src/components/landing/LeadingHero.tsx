@@ -3,7 +3,7 @@ import { trackEvent } from "../../lib/analytics";
 
 export default function LeadingHero() {
   return (
-    <section className="relative bg-gray-900 text-white h-screen overflow-hidden">
+    <section className="relative bg-gray-900 text-white w-screen max-w-full h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

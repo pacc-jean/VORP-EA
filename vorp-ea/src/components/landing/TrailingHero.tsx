@@ -20,7 +20,7 @@ export default function TrailingHero() {
 				backgroundImage: "url('/trailinghero.jpg')",
 			}}
 		>
-			<div className="bg-black/40 w-full h-full">
+			<div className="w-full h-full">
 				<div className="max-w-7xl mx-auto px-6 py-32 flex flex-col md:flex-row items-center md:items-start h-full">
 					<motion.div
 						ref={ref}

@@ -49,21 +49,23 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 pt-6 pb-4 md:pt-10 md:pb-2 mt-20">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-8 md:gap-[14rem]">
-        {/* Logo & Copy */}
-        <div className="flex flex-col space-y-4 max-w-xs">
+    <footer className="w-full overflow-x-hidden bg-white border-t border-gray-200 pt-6 pb-20 md:pt-10 md:pb-2 mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+        {/* Logo & Description */}
+        <div className="flex flex-col space-y-4 max-w-md">
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Logo" className="h-24 w-24" />
+            <img src="/logo.png" alt="Logo" className="h-20 w-20 object-contain" />
           </Link>
           <p className="text-gray-600 text-sm leading-relaxed">
             VORP-EA — Voice of Reconciliation and Pacification East Africa. Bringing communities together with heart & impact.
           </p>
-          <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} VORP-EA. All rights reserved.</p>
+          <p className="text-gray-400 text-xs">
+            &copy; {new Date().getFullYear()} VORP-EA. All rights reserved.
+          </p>
         </div>
 
-        {/* Links Grid */}
-        <div className="flex flex-1 gap-24 max-w-4xl">
+        {/* Navigation Links + Socials */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-24 flex-1">
           {footerLinks.map(({ title, links }) => (
             <div key={title} className="flex flex-col space-y-3">
               <h3 className="font-semibold text-gray-900">{title}</h3>
@@ -86,10 +88,9 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Social Icons */}
           <div className="flex flex-col space-y-3">
             <h3 className="font-semibold text-gray-900">Social</h3>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-4">
               {socialLinks.map(({ name, icon, href }) => (
                 <a
                   key={name}
