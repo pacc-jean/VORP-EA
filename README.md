@@ -21,7 +21,7 @@ To build a modern digital presence for VORP-EA that:
 | Framework | [Next.js](https://nextjs.org) |
 | Styling   | [Tailwind CSS](https://tailwindcss.com) |
 | Animations | [Framer Motion](https://www.framer.com/motion/) |
-| Language  | TypeScript                    |
+| Language  | TypeScript, JavaScript                 |
 | Deployment | [Vercel](https://vercel.com) |
 | Forms     | React Hook Form + Mailchimp integration |
 
@@ -47,7 +47,7 @@ To build a modern digital presence for VORP-EA that:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/vorp-ea-website.git
+git clone git@github.com:pacc-jean/VORP-EA.git
 
 # Navigate into the project directory
 cd vorp-ea
