@@ -62,7 +62,7 @@ npm run dev
 💡 Heads up: This project uses mise to manage Node versions.
 It ensures everyone on the team (or future you) is using the same environment.
 
-🔗 Then, open http://localhost:3000 to see the magic ✨
+🔗 Then, open http://localhost:[]/ to see the magic ✨
 
 ## 💡 Contributing
 This project is driven by passion and purpose. If you'd like to contribute — whether it's design ideas, content, or dev work — feel free to fork, PR, or drop an issue.
