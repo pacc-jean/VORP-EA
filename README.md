@@ -1,4 +1,4 @@
-![1339848135397240631](https://github.com/user-attachments/assets/fe91fbed-16b3-48d0-b4d5-57db3a76fe48)
+![logo v01](https://github.com/user-attachments/assets/98bc6e90-69c4-4f04-9a5d-3af775cef033)
 # 🌍 Voice of Reconciliation and Pacification East Africa (VORP-EA) — Website Revamp
 
 Welcome to the official repository for the complete redesign of the **VORP-EA** website — a multi-page, SEO-optimized, lightning-fast site that embodies our mission of healing, peace, and progress in East Africa.
@@ -16,14 +16,14 @@ To build a modern digital presence for VORP-EA that:
 
 ## 🛠️ Tech Stack
 
-| Layer      | Tech                                                                   |
-| ---------- | ---------------------------------------------------------------------- |
-| Framework  | [React](https://reactjs.org) + [Vite](https://vitejs.dev)              |
-| Styling    | [Tailwind CSS](https://tailwindcss.com)                                |
-| Animations | [Framer Motion](https://www.framer.com/motion/)                        |
-| Language   | TypeScript                                                             |
-| Deployment | [Netlify](https://www.netlify.com) or [Vercel](https://vercel.com)     |
-| Forms      | [React Hook Form](https://react-hook-form.com) + Mailchimp integration |
+| Layer     | Tech                          |
+|-----------|-------------------------------|
+| Framework | [Next.js](https://nextjs.org) |
+| Styling   | [Tailwind CSS](https://tailwindcss.com) |
+| Animations | [Framer Motion](https://www.framer.com/motion/) |
+| Language  | TypeScript, JavaScript                 |
+| Deployment | [Vercel](https://vercel.com) |
+| Forms     | React Hook Form + Mailchimp integration |
 
 ## 📄 Pages Overview
 
@@ -47,13 +47,10 @@ To build a modern digital presence for VORP-EA that:
 ## 🚀 Getting Started
 ```bash
 # Clone the repository
-git clone https://github.com/pacc-jean/VORP-EA.git
+git clone git@github.com:pacc-jean/VORP-EA.git
 
 # Navigate into the project directory
-cd VORP-EA/vorp-ea
-
-# Install and activate the correct Node version
-mise install
+cd vorp-ea
 
 # Install dependencies
 npm install
