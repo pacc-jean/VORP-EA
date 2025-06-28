@@ -27,12 +27,12 @@ To build a modern digital presence for VORP-EA that:
 
 ## 📄 Pages Overview
 
-- `Home` — Vision, mission, goals, and welcome message with events
-- `Programs` — Our work and initiatives
-- `Volunteer` — How to get involved
-- `Donate` — Make a difference
-- `Contact Us` — Newsletter & communication
-- Global Special Events Display — e.g. Mental Health Awareness Month
+- `Landing Page` — Leading Hero with a call to action, Overview of VORP-EA, Statements section[mission, vision, goal], Stories of Resilience, Newsletter signup, Trailing Hero with a call to action 
+- `Join Us` — Volunteer, Partner with us, Learn&Share
+- `What We Do` — Programs, Our Work, Our Impact
+- `Who We Are` — About us, Our Team, Our History, Our Partners
+- `Donate` — Donation page with a forms[One-time donation, Recurring donation]
+- `Global Special Events Display` — e.g. Mental Health Awareness Month
 
 ## ✨ Key Features
 
@@ -42,9 +42,9 @@ To build a modern digital presence for VORP-EA that:
 - Newsletter signup
 - Multi-page structure with smooth routing
 - Vibrant yet professional design system
+- Mobile-first approach
 
 ## 🚀 Getting Started
-
 ```bash
 # Clone the repository
 git clone git@github.com:pacc-jean/VORP-EA.git
@@ -55,10 +55,14 @@ cd vorp-ea
 # Install dependencies
 npm install
 
-# Run the development server
+# Start the development server
 npm run dev
 ```
-Open http://localhost:3000 to see the magic ✨
+
+💡 Heads up: This project uses mise to manage Node versions.
+It ensures everyone on the team (or future you) is using the same environment.
+
+🔗 Then, open http://localhost:3000 to see the magic ✨
 
 ## 💡 Contributing
 This project is driven by passion and purpose. If you'd like to contribute — whether it's design ideas, content, or dev work — feel free to fork, PR, or drop an issue.
@@ -66,7 +70,7 @@ This project is driven by passion and purpose. If you'd like to contribute — w
 ## 📬 Contact
 For collaboration or general inquiries, reach us via:
 
-[NGO EMAIL] – info@vorp-ea.org
-[DEV EMAIL] – jeanluc.xii.iv@gmail.com
+`NGO EMAIL` – info@vorp-ea.org
+`DEV EMAIL` – jeanluc.xii.iv@gmail.com
 
 “Peace begins with understanding.” – VORP-EA
