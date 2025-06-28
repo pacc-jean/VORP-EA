@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import Navbar from "./components/Navbar";
-import MobileBottomNav from "./components/MobileBottomNav";
-import Footer from "./components/Footer";
+import Navbar from "./components/consistent/Navbar";
+import MobileBottomNav from "./components/consistent/MobileBottomNav";
+import Footer from "./components/consistent/Footer";
 import LandingPage from './pages/LandingPage';
 
 function App() {

@@ -1,0 +1,26 @@
+{
+  "name": "Voice Of Reconciliation and Pacification East Africa",
+  "short_name": "VORP-EA",
+  "description": "VOICE OF RECONCILIATION AND PACIFICATION IN EASTERN AFRICA N.G.O (VORP-EA) is a humanitarian think tank based in East Africa that seeks to improve outcomes for people in fragile and conflict affected areas by redefining the aid model. Strengthening the adaptive and learning capacity of the aid system and using evidence of What Works locally helps us to break down system wide barriers to using systems thinking and context specific approaches.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#ef4444",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

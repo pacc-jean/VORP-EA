@@ -15,8 +15,8 @@ export default function NewsletterSignup() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="px-6 py-16 bg-[#032B41] text-white">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+    <section className="px-6 py-16 bg-white text-white">
+      <div className="bg-[#032B41] rounded-xl md:rounded-2xl px-6 py-8 md:px-12 md:py-16 max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         {/* Left: Text Content */}
         <div className="md:max-w-xl">
           <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4">
@@ -42,7 +42,7 @@ export default function NewsletterSignup() {
           })}
           className="w-full md:max-w-md space-y-2"
         >
-          <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex flex-col sm:flex-row gap-8">
             <input
               type="email"
               placeholder="Enter your email"
@@ -93,4 +93,4 @@ export default function NewsletterSignup() {
       </div>
     </section>
   );
-}
+};

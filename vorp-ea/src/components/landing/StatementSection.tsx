@@ -1,115 +1,63 @@
-import { useEffect, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const statements = [
-	{
-		title: "Mission",
-		content:
-			"To alleviate poverty, promote access to healthcare services and improve the socioeconomic welfare of the most vulnerable groups within the communities.",
-	},
-	{
-		title: "Vision",
-		content: "A society with access to equitable resources and opportunities.",
-	},
-	{
-		title: "Goal",
-		content:
-			"VORP-EA empowers vulnerable communities by improving access to basic healthcare, economic opportunities and essential resources.",
-	},
-];
-
-const cardVariants = {
-	enter: (direction: number) => ({
-		x: direction > 0 ? 100 : -100,
-		opacity: 0,
-		rotate: direction > 0 ? 8 : -8,
-	}),
-	center: {
-		x: 0,
-		opacity: 1,
-		rotate: 0,
-		transition: { duration: 0.6 },
-	},
-	exit: (direction: number) => ({
-		x: direction < 0 ? 100 : -100,
-		opacity: 0,
-		rotate: direction < 0 ? 8 : -8,
-		transition: { duration: 0.4 },
-	}),
-};
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import missionImage from "../../assets/images/mission-image.jpg";
 
 export default function StatementSection() {
-	const [[index, direction], setIndex] = useState([0, 0]);
+  return (
+    <section className="w-full bg-white py-24" id="overview">
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-center">
+        {/* Left: Mission & Vision */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <p className="text-indigo-600 font-semibold uppercase tracking-wider mb-4">
+            Our Purpose
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+            Empowering East Africa, One Voice at a Time
+          </h2>
+          <div className="space-y-5 text-lg text-slate-700 leading-relaxed">
+            <p>
+              <span className="font-semibold text-gray-900">Mission:</span>{" "}
+              To alleviate poverty, promote access to healthcare services, and
+              enhance the socioeconomic welfare of vulnerable East Africans—
+              through individual empowerment, community development, and systemic
+              change.
+            </p>
+            <p>
+              <span className="font-semibold text-gray-900">Vision:</span>{" "}
+              A society where diversity is celebrated, all voices are heard, and
+              every person has equitable access to resources and opportunities.
+            </p>
+          </div>
+          <a
+            href="#our-story"
+            className="inline-flex items-center text-indigo-600 font-medium mt-6 hover:underline group"
+          >
+            Read Our Story
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+        </motion.div>
 
-	const paginate = useCallback(
-		(newDirection: number) => {
-			const newIndex =
-				(index + newDirection + statements.length) % statements.length;
-			setIndex([newIndex, newDirection]);
-		},
-		[index]
-	);
-
-	// Auto-rotate every 5s
-	useEffect(() => {
-		const interval = setInterval(() => {
-			paginate(1);
-		}, 5000);
-		return () => clearInterval(interval);
-	}, [paginate]);
-
-	return (
-		<section
-			className="relative py-2 px-4 bg-gray-50 text-gray-900 overflow-hidden"
-			style={{
-				backgroundImage: "url('/grain-texture.png')",
-				backgroundSize: "repeat",
-			}}
-		>
-			<div className="max-w-4xl mx-auto text-center">
-				<h2 className="text-4xl md:text-5xl font-bold mb-2 font-serif tracking-tight">
-					Our Mission, Vision & Goal
-				</h2>
-
-				<div className="relative h-[30rem] flex items-center justify-center z-10">
-					{/* Soft Glow Behind Card */}
-					<div className="absolute z-0 w-96 h-96 bg-red-500/20 rounded-full blur-[120px] animate-pulse" />
-
-					<AnimatePresence custom={direction}>
-						<motion.div
-							key={index}
-							custom={direction}
-							variants={cardVariants}
-							initial="enter"
-							animate="center"
-							exit="exit"
-							className="absolute bg-white shadow-2xl rounded-3xl p-10 w-full max-w-2xl text-center z-10"
-						>
-							<h3 className="text-3xl font-serif italic text-red-600 mb-6">
-								{statements[index].title}
-							</h3>
-							<p className="text-lg leading-relaxed text-gray-800 font-sans">
-								{statements[index].content}
-							</p>
-						</motion.div>
-					</AnimatePresence>
-
-					{/* Navigation Arrows */}
-					<button
-						onClick={() => paginate(-1)}
-						className="absolute left-0 p-2 text-gray-500 hover:text-red-600 transition z-20"
-					>
-						<ChevronLeft size={36} />
-					</button>
-					<button
-						onClick={() => paginate(1)}
-						className="absolute right-0 p-2 text-gray-500 hover:text-red-600 transition z-20"
-					>
-						<ChevronRight size={36} />
-					</button>
-				</div>
-			</div>
-		</section>
-	);
-}
+        {/* Right: Hero Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group"
+        >
+          <img
+            src={missionImage}
+            alt="Community empowerment"
+            className="w-full h-full object-cover opacity-70 md:opacity-40 md:group-hover:opacity-70 transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
+        </motion.div>
+      </div>
+    </section>
+  );
+};
