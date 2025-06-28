@@ -50,7 +50,7 @@ To build a modern digital presence for VORP-EA that:
 git clone https://github.com/your-username/vorp-ea-website.git
 
 # Navigate into the project directory
-cd vorp-ea-website
+cd vorp-ea
 
 # Install dependencies
 npm install
