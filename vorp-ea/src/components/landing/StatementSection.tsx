@@ -4,7 +4,7 @@ import missionImage from "../../assets/images/mission-image.jpg";
 
 export default function StatementSection() {
   return (
-    <section className="w-full bg-gradient-to-b from-slate-400 via-gray-600 to-slate-700 py-24" id="overview">
+    <section className="w-full bg-white py-24" id="overview">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-center">
         {/* Left: Mission & Vision */}
         <motion.div
@@ -19,7 +19,7 @@ export default function StatementSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             Empowering East Africa, One Voice at a Time
           </h2>
-          <div className="space-y-5 text-lg text-slate-300 leading-relaxed">
+          <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
             <p>
               <span className="font-semibold text-xl text-gray-900">Mission:</span>{" "}
               To alleviate poverty, promote access to healthcare services, and

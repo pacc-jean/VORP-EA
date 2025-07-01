@@ -9,9 +9,9 @@ export default function LeadingHero() {
         <img
           src="/leadinghero-bg.jpg"
           alt="Community at work"
-          className="w-full h-full object-cover opacity-100"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-white opacity-10" />
+        <div className="absolute inset-0" />
       </div>
 
       {/* Hero Content */}
@@ -69,7 +69,7 @@ export default function LeadingHero() {
         >
           <path
             d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"
-            className="fill-slate-400"
+            className="fill-white"
           />
         </svg>
       </div>
