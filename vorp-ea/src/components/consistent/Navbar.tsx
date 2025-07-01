@@ -160,7 +160,7 @@ export default function Navbar() {
                                                 <span
                                                     className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
                                                     group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
-                                                    ${scrolled ? "text-red-600" : "text-white"}`}
+                                                    ${scrolled ? "text-red-600" : "text-red-600"}`}
                                                     style={{ width: "1em" }}
                                                 >
                                                     &#x276F;
