@@ -39,7 +39,7 @@ const programs = [
 
 export default function FeaturedProgramsSection() {
 	return (
-		<section className="w-full bg-gradient-to-br from-slate-700 via-gray-800 to-slate-800 py-24" id="programs">
+		<section className="w-full bg-gradient-to-b from-slate-400 via-gray-600 to-slate-700 py-24" id="programs">
 			<div className="max-w-7xl mx-auto px-4">
 				{/* Section Header */}
 				<motion.div
@@ -66,13 +66,16 @@ export default function FeaturedProgramsSection() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: index * 0.1, duration: 0.6 }}
 							viewport={{ once: true }}
-							className="relative p-6 rounded-2xl shadow-xl min-h-[260px] backdrop-blur-md bg-white/10 border border-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden"
+							className="relative p-6 rounded-2xl shadow-xl min-h-[260px] backdrop-blur-md bg-white/10 border border-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden group"
 						>
-							{/* Glossy overlay layer */}
+							{/* Glossy base overlay */}
 							<span className="pointer-events-none absolute inset-0 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-[4px] z-0" />
 
-							{/* Actual Content */}
-							<div className="relative z-10">
+							{/* Shine animation */}
+							<span className="pointer-events-none absolute -top-1/2 left-[-60%] w-[200%] h-[200%] rotate-45 bg-gradient-to-r from-white/10 via-white/30 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 animate-shimmer rounded-2xl" />
+
+							{/* Card Content */}
+							<div className="relative z-20">
 								<div className={`w-14 h-14 flex items-center justify-center rounded-full ${program.color} mb-5 shadow-md`}>
 									{program.icon}
 								</div>
@@ -108,7 +111,7 @@ export default function FeaturedProgramsSection() {
 				>
 					<a
 						href="#all-programs"
-						className="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+						className="inline-flex items-center justify-center bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
 					>
 						Explore All Programs
 					</a>

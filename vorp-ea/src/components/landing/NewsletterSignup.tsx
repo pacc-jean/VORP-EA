@@ -15,7 +15,7 @@ export default function NewsletterSignup() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="px-6 py-16 bg-white text-white">
+    <section className="px-6 py-16 bg-slate-400 text-white">
       <div className="bg-[#032B41] rounded-xl md:rounded-2xl px-6 py-8 md:px-12 md:py-16 max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         {/* Left: Text Content */}
         <div className="md:max-w-xl">

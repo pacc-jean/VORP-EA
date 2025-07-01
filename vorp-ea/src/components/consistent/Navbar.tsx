@@ -42,13 +42,13 @@ export default function Navbar() {
                 onMouseLeave={() => setHoveredMenu(null)}
             >
                 {/* Inner nav content container with padding + max width */}
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="max-w-7xl mx-auto px-4">
                     <div className={`flex items-center justify-between pt-4 ${scrolled ? "pb-1" : "pb-2"}`}>
                         <Link to="/" className="flex items-center flex-shrink-0">
-                            <img src="/logo.png" alt="Logo" className="h-24 w-24" />
+                            <img src="/logo.png" alt="Logo" className="h-[150px] w-[150px]" />
                         </Link>
 
-                        <div className="flex-1 flex justify-center items-center space-x-8">
+                        <div className="flex-1 flex justify-center items-center space-x-12">
                             {navItems.map(({ title }, idx) => (
                                 <div key={title} className="flex items-center space-x-8">
                                     {idx > 0 && <span className="h-6 border-l-2 border-gray-300" />}

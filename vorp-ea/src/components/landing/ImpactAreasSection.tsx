@@ -38,7 +38,7 @@ const impactAreas = [
 
 export default function ImpactAreasSection() {
   return (
-    <section className="w-full bg-gray-50 py-24" id="impact">
+    <section className="w-full bg-gradient-to-b from-slate-700 via-gray-600 to-slate-400 py-24" id="impact">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ export default function ImpactAreasSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Our Core Impact Areas
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
             We don’t just respond to crises—we create systems that empower communities to thrive.
           </p>
         </motion.div>

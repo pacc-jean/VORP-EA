@@ -29,18 +29,17 @@ export default function StoriesSection() {
 
   return (
     <section
-      className="py-6 px-0 text-gray-900"
-      style={{ backgroundColor: "#F8FAFC" }}
+      className="bg-gradient-to-b from-slate-700 via-gray-600 to-slate-400 py-6 px-0 text-gray-900"
     >
       <div className="w-full py-12 px-4 md:px-2">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-16 gap-8 px-4">
           <div className="w-full md:w-auto">
-            <h2 className="text-4xl md:text-7xl font-serif font-semibold text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-7xl font-serif font-semibold text-white leading-tight">
               Community Stories: <br/> <em className="italic">"Stories From The Field"</em>
             </h2>
           </div>
-          <div className="max-w-xl text-lg text-gray-800">
+          <div className="max-w-xl text-lg text-gray-300">
             <p className="mb-4">
               Hear directly from those we serve. Explore how individuals overcome incredible
               challenges, rebuild their lives, and contribute to their communities.
@@ -53,7 +52,7 @@ export default function StoriesSection() {
                   label: "View All Resilience Stories",
                 })
               }
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-medium px-5 py-3 rounded-md transition"
+              className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-700 text-white font-medium px-5 py-3 rounded-md transition"
             >
               View All <span className="text-lg"><ChevronRight size={24} /></span>
             </button>
@@ -64,13 +63,13 @@ export default function StoriesSection() {
         <div className="flex justify-end items-center gap-4 mb-4 px-4">
           <button
             onClick={() => scroll("left")}
-            className="p-2 rounded-md bg-gray-200 hover:bg-gray-300 transition"
+            className="p-2 rounded-md bg-white hover:bg-gray-300 transition"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={() => scroll("right")}
-            className="p-2 rounded-md bg-[#032B41] text-white hover:bg-[#054866] transition"
+            className="p-2 rounded-md bg-gray-800 text-white hover:bg-black transition"
           >
             <ChevronRight size={24} />
           </button>
@@ -90,7 +89,7 @@ export default function StoriesSection() {
                     height: "550px",
                   }}
                 >
-                  <div className="absolute inset-0 bg-white/20 backdrop-blur-xm flex flex-col justify-end p-6 h-full">
+                  <div className="absolute inset-0 bg-white/10 md:bg-white/30 group-hover:bg-white/10 backdrop-blur-xm flex flex-col justify-end p-6 h-full">
                     {/* Text + Button Container */}
                     <div className="flex flex-col transition-all duration-300 space-y-4">
                       {/* Text Content Wrapper */}
