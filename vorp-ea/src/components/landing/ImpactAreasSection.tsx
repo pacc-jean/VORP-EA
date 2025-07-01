@@ -38,7 +38,7 @@ const impactAreas = [
 
 export default function ImpactAreasSection() {
   return (
-    <section className="w-full bg-white py-24" id="impact">
+    <section className="w-full bg-gradient-to-b from-slate-100 via-gray-100 to-slate-100 py-24" id="impact">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

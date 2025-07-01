@@ -4,7 +4,7 @@ import missionImage from "../../assets/images/mission-image.jpg";
 
 export default function StatementSection() {
   return (
-    <section className="w-full bg-white py-24" id="overview">
+    <section className="w-full bg-gray-100 py-24" id="overview">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-center">
         {/* Left: Mission & Vision */}
         <motion.div

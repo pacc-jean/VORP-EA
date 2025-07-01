@@ -69,7 +69,7 @@ export default function LeadingHero() {
         >
           <path
             d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"
-            className="fill-white"
+            className="fill-gray-100"
           />
         </svg>
       </div>
