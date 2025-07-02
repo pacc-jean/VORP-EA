@@ -15,18 +15,18 @@ export default function LeadingHero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl ml-2 md:ml-10 px-2 h-full flex items-start pt-[170px] md:pt-[200px]">
+      <div className="relative z-10 max-w-7xl ml-2 md:ml-10 px-2 md:px-24 h-full flex items-start pt-[170px] md:pt-[300px]">
         <motion.div
           className="max-w-2xl space-y-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
             Building Peace,<br />
-            <span className="italic text-green-900">Restoring Hope in East Africa</span>
+            <span className="text-green-600">Restoring Hope in East Africa</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200">
+          <p className="text-base md:text-xl text-gray-200">
             Empowering diverse communities through reconciliation, development, and advocacy
           </p>
           <div className="flex gap-6 flex-wrap sm:flex-nowrap">
@@ -69,10 +69,10 @@ export default function LeadingHero() {
         >
           <path
             d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"
-            className="fill-gray-100"
+            className="fill-white"
           />
         </svg>
       </div>
     </section>
   );
-};
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Heart } from "lucide-react";
 import { trackEvent } from "../../lib/analytics";
 import { Link } from "react-router-dom";
 
@@ -102,9 +102,10 @@ export default function Navbar() {
                                     scrolled
                                         ? "bg-gradient-to-r from-red-500 via-pink-600 to-red-700 text-white"
                                         : "bg-white text-red-600"
-                                } text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 hover:animate-pulse inline-block`}
+                                } text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2`}
                             >
-                                Donate
+                                <span>Donate</span>
+                                <Heart className="w-5 h-5 animate-ping-once text-red-500" />
                             </a>
                         </div>
                     </div>
@@ -177,4 +178,4 @@ export default function Navbar() {
             </nav>
         </header>
     );
-};
+}

@@ -39,7 +39,7 @@ const programs = [
 
 export default function FeaturedProgramsSection() {
 	return (
-		<section className="w-full bg-gradient-to-b from-slate-100 via-gray-600 to-slate-700 py-24" id="programs">
+		<section className="w-full bg-slate-900 py-24" id="programs">
 			<div className="max-w-7xl mx-auto px-4">
 				{/* Section Header */}
 				<motion.div
@@ -49,16 +49,16 @@ export default function FeaturedProgramsSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4">
+					<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
 						Featured Programs
 					</h2>
-					<p className="text-lg text-gray-700 max-w-2xl mx-auto">
+					<p className="text-lg text-gray-300 max-w-2xl mx-auto">
 						Real programs, real impact—this is where purpose meets action.
 					</p>
 				</motion.div>
 
 				{/* Program Grid */}
-				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
 					{programs.map((program, index) => (
 						<motion.div
 							key={index}
@@ -83,7 +83,7 @@ export default function FeaturedProgramsSection() {
 									{program.title}
 								</h3>
 								<p className="text-white/80 text-lg">
-									<span className="font-extrabold">
+									<span className="text-green-500 text-xl font-extrabold">
 										<CountUp
 											start={0}
 											end={program.number}
@@ -119,4 +119,4 @@ export default function FeaturedProgramsSection() {
 			</div>
 		</section>
 	);
-};
+}
