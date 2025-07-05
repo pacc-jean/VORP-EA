@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { trackEvent } from "../../lib/analytics";
+import { Link } from "react-router-dom";
 
 export default function TrailingHero() {
 	const ref = useRef(null);
@@ -59,12 +60,12 @@ export default function TrailingHero() {
 					<p className="text-lg drop-shadow-sm">
 						Your support fuels peace, hope, and healing in East Africa. Help us build a resilient tomorrow.
 					</p>
-					<a
-                                href="#"
-                                onClick={() =>
-                                    trackEvent({
-                                        action: "click_donate",
-                                        category: "CTA",
+					<Link
+						to="/donate"
+						onClick={() =>
+							trackEvent({
+								action: "click_donate",
+								category: "CTA",
                                         label: "TrailingHero > Donate Button",
                                     })
                                 }
@@ -72,7 +73,7 @@ export default function TrailingHero() {
                             >
                                 <span>Donate</span>
                                 <i className="fa-solid fa-heart animate-pulse text-red-500 text-xl"></i>
-                            </a>
+                            </Link>
 				</motion.div>
 			</div>
 		</section>

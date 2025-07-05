@@ -89,8 +89,8 @@ export default function Navbar() {
                         </div>
 
                         <div className="flex-shrink-0">
-                            <a
-                                href="#"
+                            <Link
+                                to="/donate"
                                 onClick={() =>
                                     trackEvent({
                                         action: "click_donate",
@@ -102,7 +102,7 @@ export default function Navbar() {
                             >
                                 <span>Donate</span>
                                 <i className="fa-solid fa-heart animate-pulse text-red-600 text-xl"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
