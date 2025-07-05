@@ -5,6 +5,7 @@ import MobileBottomNav from "./components/consistent/MobileBottomNav";
 import Footer from "./components/consistent/Footer";
 import LandingPage from './pages/LandingPage';
 import DonatePage from './pages/DonatePage';
+import TeamPage from './pages/TeamPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/donate" element={<DonatePage />} />
+        <Route path="/team" element={<TeamPage />} />
       </Routes>
       <Footer />
     </>
