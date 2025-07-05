@@ -60,18 +60,19 @@ export default function TrailingHero() {
 						Your support fuels peace, hope, and healing in East Africa. Help us build a resilient tomorrow.
 					</p>
 					<a
-						href="#"
-						onClick={() =>
-							trackEvent({
-								action: "click_donate",
-								category: "CTA",
-								label: "Trailing Hero > Donate Button",
-							})
-						}
-						className="bg-gradient-to-r from-red-500 via-pink-600 to-red-700 text-white font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 hover:animate-pulse inline-block w-max"
-					>
-						Donate
-					</a>
+                                href="#"
+                                onClick={() =>
+                                    trackEvent({
+                                        action: "click_donate",
+                                        category: "CTA",
+                                        label: "TrailingHero > Donate Button",
+                                    })
+                                }
+                                className="bg-white text-red-600 text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2"
+                            >
+                                <span>Donate</span>
+                                <i className="fa-solid fa-heart animate-pulse text-red-500 text-xl"></i>
+                            </a>
 				</motion.div>
 			</div>
 		</section>

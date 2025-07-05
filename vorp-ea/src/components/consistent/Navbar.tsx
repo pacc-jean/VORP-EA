@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Heart } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { trackEvent } from "../../lib/analytics";
 import { Link } from "react-router-dom";
 
@@ -98,14 +98,10 @@ export default function Navbar() {
                                         label: "Navbar > Donate Button",
                                     })
                                 }
-                                className={`${
-                                    scrolled
-                                        ? "bg-gradient-to-r from-red-500 via-pink-600 to-red-700 text-white"
-                                        : "bg-white text-red-600"
-                                } text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2`}
+                                className="bg-gray-800 text-white text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2"
                             >
                                 <span>Donate</span>
-                                <Heart className="w-5 h-5 animate-ping-once text-red-500" />
+                                <i className="fa-solid fa-heart animate-pulse text-red-600 text-xl"></i>
                             </a>
                         </div>
                     </div>
