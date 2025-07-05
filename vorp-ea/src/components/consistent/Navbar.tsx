@@ -133,38 +133,55 @@ export default function Navbar() {
                                         className="flex flex-col min-w-[120px]"
                                         onMouseEnter={() => setHoveredMenu(title)}
                                     >
-                                        {items.map((item) => (
-                                            <a
-                                                key={item}
-                                                href="#"
-                                                onClick={() =>
-                                                    trackEvent({
-                                                        action: "click_nav_link",
-                                                        category: "Navigation",
-                                                        label: `${title} > ${item}`,
-                                                    })
-                                                }
-                                                className={`group relative text-sm mb-1 transition-colors cursor-pointer ${
-                                                    hoveredMenu === title
-                                                        ? scrolled
-                                                            ? "text-gray-900 font-semibold"
-                                                            : "text-white font-semibold"
-                                                        : scrolled
-                                                        ? "text-gray-500"
-                                                        : "text-gray-200"
-                                                } hover:text-red-500`}
-                                            >
-                                                <span
-                                                    className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
-                                                    group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
-                                                    ${scrolled ? "text-red-600" : "text-red-600"}`}
-                                                    style={{ width: "1em" }}
+                                        {items.map((item) => {
+                                            const itemPathMap: Record<string, string> = {
+                                                "Our Team": "/team",
+                                                //"Our Partners": "/partners",
+                                                // "About Us": "/about",
+                                                // "Programs": "/programs",
+                                                // "Our Work": "/work",
+                                                // "Our Impact": "/impact",
+                                                // "Work With Us": "/work-with-us",
+                                                // "Learn & Share": "/learn-share",
+                                                // "Partner With Us": "/partner",
+                                                // "Our History": "/history",
+                                            };
+
+                                            const path = itemPathMap[item] || "#";
+
+                                            return (
+                                                <Link
+                                                    key={item}
+                                                    to={path}
+                                                    onClick={() =>
+                                                        trackEvent({
+                                                            action: "click_nav_link",
+                                                            category: "Navigation",
+                                                            label: `${title} > ${item}`,
+                                                        })
+                                                    }
+                                                    className={`group relative text-sm mb-1 transition-colors cursor-pointer ${
+                                                        hoveredMenu === title
+                                                            ? scrolled
+                                                                ? "text-gray-900 font-semibold"
+                                                                : "text-white font-semibold"
+                                                            : scrolled
+                                                            ? "text-gray-500"
+                                                            : "text-gray-200"
+                                                    } hover:text-red-500`}
                                                 >
-                                                    &#x276F;
-                                                </span>
-                                                <span className="pl-5">{item}</span>
-                                            </a>
-                                        ))}
+                                                    <span
+                                                        className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
+                                                        group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
+                                                        ${scrolled ? "text-red-600" : "text-red-600"}`}
+                                                        style={{ width: "1em" }}
+                                                    >
+                                                        &#x276F;
+                                                    </span>
+                                                    <span className="pl-5">{item}</span>
+                                                </Link>
+                                            );
+                                        })}
                                     </div>
                                 ))}
                             </div>
