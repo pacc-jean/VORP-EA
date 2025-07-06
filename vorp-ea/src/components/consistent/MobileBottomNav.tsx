@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, Users, Briefcase, Info, Heart, X } from 'lucide-react';
 import { trackEvent } from '../../lib/analytics';
+import { Link } from 'react-router-dom';
 
 const navItems = [
 	{
@@ -23,6 +24,21 @@ const navItems = [
 	},
 ];
 
+const pathMap: Record<string, string> = {
+	Home: '/',
+	'Work With Us': '/work',
+	'Learn & Share': '/learn',
+	'Partner With Us': '/partners',
+	Programs: '/programs',
+	'Our Work': '/our-work',
+	'Our Impact': '/impact',
+	'About Us': '/about',
+	'Our History': '/history',
+	'Our Team': '/team',
+	'Our Partners': '/partners',
+	Donate: '/donate',
+};
+
 export default function MobileBottomNav() {
 	const [activeDrawer, setActiveDrawer] = useState<string | null>('Home');
 
@@ -37,24 +53,23 @@ export default function MobileBottomNav() {
 				<ul className="flex justify-around items-center py-2 text-xs text-gray-700">
 					{/* HOME */}
 					<li
-						onClick={() => setActiveDrawer('Home')}
-						className={`flex flex-col items-center cursor-pointer relative select-none ${
+						className={`flex flex-col items-center relative ${
 							activeDrawer === 'Home' ? 'text-black' : 'text-gray-500'
 						}`}
-						aria-current={activeDrawer === 'Home' ? 'page' : undefined}
 					>
-						<Home size={20} />
-						<span className="mt-1 text-[11px]">Home</span>
+						<Link to={pathMap['Home']} className="flex flex-col items-center">
+							<Home size={20} />
+							<span className="mt-1 text-[11px]">Home</span>
+						</Link>
 						{activeDrawer === 'Home' && (
 							<motion.div
 								layoutId="underline-mobile"
 								className="absolute top-full mt-1 w-6 h-1 bg-gray-700 rounded"
-								transition={{ type: 'spring', stiffness: 500, damping: 30 }}
 							/>
 						)}
 					</li>
 
-					{/* OTHER DRAWER TABS */}
+					{/* NAV SECTIONS */}
 					{navItems.map(({ title, icon }) => (
 						<li
 							key={title}
@@ -62,7 +77,6 @@ export default function MobileBottomNav() {
 							className={`flex flex-col items-center cursor-pointer relative select-none ${
 								activeDrawer === title ? 'text-black' : 'text-gray-500'
 							}`}
-							aria-current={activeDrawer === title ? 'page' : undefined}
 						>
 							{icon}
 							<span className="mt-1 text-[11px]">{title}</span>
@@ -70,26 +84,27 @@ export default function MobileBottomNav() {
 								<motion.div
 									layoutId="underline-mobile"
 									className="absolute top-full mt-1 w-6 h-1 bg-gray-700 rounded"
-									transition={{ type: 'spring', stiffness: 500, damping: 30 }}
 								/>
 							)}
 						</li>
 					))}
 
 					{/* DONATE */}
-					<li
-						onClick={() =>
-							trackEvent({
-								action: 'click_donate',
-								category: 'CTA',
-								label: 'Mobile Nav > Donate Button',
-							})
-						}
-						className="flex flex-col items-center cursor-pointer relative select-none text-red-600"
-						aria-label="Donate"
-					>
-						<Heart fill="currentColor" size={20} />
-						<span className="mt-1 text-[11px]">Donate</span>
+					<li className="flex flex-col items-center relative text-red-600">
+						<Link
+							to={pathMap['Donate']}
+							onClick={() =>
+								trackEvent({
+									action: 'click_donate',
+									category: 'CTA',
+									label: 'Mobile Nav > Donate Button',
+								})
+							}
+							className="flex flex-col items-center"
+						>
+							<Heart fill="currentColor" size={20} />
+							<span className="mt-1 text-[11px]">Donate</span>
+						</Link>
 					</li>
 				</ul>
 			</nav>
@@ -104,8 +119,6 @@ export default function MobileBottomNav() {
 						exit={{ y: '100%' }}
 						transition={{ type: 'spring', stiffness: 300, damping: 30 }}
 						className="fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-xl p-6 z-[60] md:hidden"
-						role="dialog"
-						aria-modal="true"
 					>
 						<button
 							onClick={() => setActiveDrawer(null)}
@@ -121,8 +134,9 @@ export default function MobileBottomNav() {
 							{navItems
 								.find((nav) => nav.title === activeDrawer)
 								?.items.map((item) => (
-									<button
+									<Link
 										key={item}
+										to={pathMap[item] || '#'}
 										onClick={() => {
 											setActiveDrawer(null);
 											trackEvent({
@@ -131,11 +145,10 @@ export default function MobileBottomNav() {
 												label: `${activeDrawer} > ${item}`,
 											});
 										}}
-										className="w-full bg-gray-100 text-gray-800 rounded-md py-2 font-semibold hover:bg-gray-200 transition flex items-center justify-center gap-2 text-sm"
-										aria-label={item}
+										className="w-full bg-gray-100 text-gray-800 rounded-md py-2 font-semibold hover:bg-gray-200 transition text-center"
 									>
 										{item}
-									</button>
+									</Link>
 								))}
 						</div>
 					</motion.div>
@@ -143,4 +156,4 @@ export default function MobileBottomNav() {
 			</AnimatePresence>
 		</>
 	);
-};
+}

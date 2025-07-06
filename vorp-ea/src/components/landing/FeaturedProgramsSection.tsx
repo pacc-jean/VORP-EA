@@ -39,7 +39,7 @@ const programs = [
 
 export default function FeaturedProgramsSection() {
 	return (
-		<section className="w-full bg-white py-24" id="programs">
+		<section className="w-full bg-slate-900 py-24" id="programs">
 			<div className="max-w-7xl mx-auto px-4">
 				{/* Section Header */}
 				<motion.div
@@ -49,16 +49,16 @@ export default function FeaturedProgramsSection() {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+					<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
 						Featured Programs
 					</h2>
-					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
+					<p className="text-lg text-gray-300 max-w-2xl mx-auto">
 						Real programs, real impact—this is where purpose meets action.
 					</p>
 				</motion.div>
 
 				{/* Program Grid */}
-				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
 					{programs.map((program, index) => (
 						<motion.div
 							key={index}
@@ -66,30 +66,34 @@ export default function FeaturedProgramsSection() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: index * 0.1, duration: 0.6 }}
 							viewport={{ once: true }}
-							className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 min-h-[260px]"
+							className="relative p-6 rounded-2xl shadow-xl min-h-[260px] backdrop-blur-md bg-white/10 border border-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden group"
 						>
-							<div
-								className={`w-14 h-14 flex items-center justify-center rounded-full ${program.color} mb-5`}
-							>
-								{program.icon}
+							{/* Glossy base overlay */}
+							<span className="pointer-events-none absolute inset-0 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-[4px] z-0" />
+
+							{/* Card Content */}
+							<div className="relative z-20">
+								<div className={`w-14 h-14 flex items-center justify-center rounded-full ${program.color} mb-5 shadow-md`}>
+									{program.icon}
+								</div>
+								<h3 className="text-2xl font-bold text-white mb-2 leading-snug tracking-tight">
+									{program.title}
+								</h3>
+								<p className="text-white/80 text-lg">
+									<span className="text-green-500 text-xl font-extrabold">
+										<CountUp
+											start={0}
+											end={program.number}
+											duration={2}
+											separator=","
+											suffix={program.suffix}
+											enableScrollSpy
+											scrollSpyOnce
+										/>{" "}
+									</span>
+									{program.text}
+								</p>
 							</div>
-							<h3 className="text-xl font-semibold text-gray-900 mb-2">
-								{program.title}
-							</h3>
-							<p className="text-gray-700 text-lg">
-                                <span className="font-extrabold">
-                                    <CountUp
-                                        start={0}
-                                        end={program.number}
-                                        duration={2}
-                                        separator=","
-                                        suffix={program.suffix}
-                                        enableScrollSpy
-                                        scrollSpyOnce
-                                    />{" "}
-                                </span>
-								{program.text}
-							</p>
 						</motion.div>
 					))}
 				</div>
@@ -104,7 +108,7 @@ export default function FeaturedProgramsSection() {
 				>
 					<a
 						href="#all-programs"
-						className="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+						className="inline-flex items-center justify-center bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
 					>
 						Explore All Programs
 					</a>
@@ -112,4 +116,4 @@ export default function FeaturedProgramsSection() {
 			</div>
 		</section>
 	);
-};
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { trackEvent } from "../../lib/analytics";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
     {
@@ -23,13 +23,22 @@ export default function Navbar() {
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [scrolled, setScrolled] = useState(false);
 
+    const location = useLocation();
+    const solidRoutes = ["/team",];
+    const isSolidPage = solidRoutes.includes(location.pathname);
+
     useEffect(() => {
+        if (isSolidPage) {
+            setScrolled(true); // Force solid navbar
+            return;
+        }
+
         const onScroll = () => {
             setScrolled(window.scrollY > 50);
         };
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [isSolidPage]);
 
     return (
         <header
@@ -42,13 +51,13 @@ export default function Navbar() {
                 onMouseLeave={() => setHoveredMenu(null)}
             >
                 {/* Inner nav content container with padding + max width */}
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="max-w-7xl mx-auto px-4">
                     <div className={`flex items-center justify-between pt-4 ${scrolled ? "pb-1" : "pb-2"}`}>
                         <Link to="/" className="flex items-center flex-shrink-0">
-                            <img src="/logo.png" alt="Logo" className="h-24 w-24" />
+                            <img src="/logo.png" alt="Logo" className="h-[150px] w-[150px]" />
                         </Link>
 
-                        <div className="flex-1 flex justify-center items-center space-x-8">
+                        <div className="flex-1 flex justify-center items-center space-x-12">
                             {navItems.map(({ title }, idx) => (
                                 <div key={title} className="flex items-center space-x-8">
                                     {idx > 0 && <span className="h-6 border-l-2 border-gray-300" />}
@@ -89,8 +98,8 @@ export default function Navbar() {
                         </div>
 
                         <div className="flex-shrink-0">
-                            <a
-                                href="#"
+                            <Link
+                                to="/donate"
                                 onClick={() =>
                                     trackEvent({
                                         action: "click_donate",
@@ -98,14 +107,11 @@ export default function Navbar() {
                                         label: "Navbar > Donate Button",
                                     })
                                 }
-                                className={`${
-                                    scrolled
-                                        ? "bg-gradient-to-r from-red-500 via-pink-600 to-red-700 text-white"
-                                        : "bg-white text-red-600"
-                                } text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 hover:animate-pulse inline-block`}
+                                className="bg-gray-800 text-white text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2"
                             >
-                                Donate
-                            </a>
+                                <span>Donate</span>
+                                <i className="fa-solid fa-heart animate-pulse text-red-600 text-xl"></i>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -136,38 +142,55 @@ export default function Navbar() {
                                         className="flex flex-col min-w-[120px]"
                                         onMouseEnter={() => setHoveredMenu(title)}
                                     >
-                                        {items.map((item) => (
-                                            <a
-                                                key={item}
-                                                href="#"
-                                                onClick={() =>
-                                                    trackEvent({
-                                                        action: "click_nav_link",
-                                                        category: "Navigation",
-                                                        label: `${title} > ${item}`,
-                                                    })
-                                                }
-                                                className={`group relative text-sm mb-1 transition-colors cursor-pointer ${
-                                                    hoveredMenu === title
-                                                        ? scrolled
-                                                            ? "text-gray-900 font-semibold"
-                                                            : "text-white font-semibold"
-                                                        : scrolled
-                                                        ? "text-gray-500"
-                                                        : "text-gray-200"
-                                                } hover:text-red-500`}
-                                            >
-                                                <span
-                                                    className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
-                                                    group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
-                                                    ${scrolled ? "text-red-600" : "text-white"}`}
-                                                    style={{ width: "1em" }}
+                                        {items.map((item) => {
+                                            const itemPathMap: Record<string, string> = {
+                                                "Our Team": "/team",
+                                                //"Our Partners": "/partners",
+                                                // "About Us": "/about",
+                                                // "Programs": "/programs",
+                                                // "Our Work": "/work",
+                                                // "Our Impact": "/impact",
+                                                // "Work With Us": "/work-with-us",
+                                                // "Learn & Share": "/learn-share",
+                                                // "Partner With Us": "/partner",
+                                                // "Our History": "/history",
+                                            };
+
+                                            const path = itemPathMap[item] || "#";
+
+                                            return (
+                                                <Link
+                                                    key={item}
+                                                    to={path}
+                                                    onClick={() =>
+                                                        trackEvent({
+                                                            action: "click_nav_link",
+                                                            category: "Navigation",
+                                                            label: `${title} > ${item}`,
+                                                        })
+                                                    }
+                                                    className={`group relative text-sm mb-1 transition-colors cursor-pointer ${
+                                                        hoveredMenu === title
+                                                            ? scrolled
+                                                                ? "text-gray-900 font-semibold"
+                                                                : "text-white font-semibold"
+                                                            : scrolled
+                                                            ? "text-gray-500"
+                                                            : "text-gray-200"
+                                                    } hover:text-red-500`}
                                                 >
-                                                    &#x276F;
-                                                </span>
-                                                <span className="pl-5">{item}</span>
-                                            </a>
-                                        ))}
+                                                    <span
+                                                        className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
+                                                        group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
+                                                        ${scrolled ? "text-red-600" : "text-red-600"}`}
+                                                        style={{ width: "1em" }}
+                                                    >
+                                                        &#x276F;
+                                                    </span>
+                                                    <span className="pl-5">{item}</span>
+                                                </Link>
+                                            );
+                                        })}
                                     </div>
                                 ))}
                             </div>
@@ -177,4 +200,4 @@ export default function Navbar() {
             </nav>
         </header>
     );
-};
+}

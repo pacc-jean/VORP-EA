@@ -13,29 +13,29 @@ export default function StatementSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <p className="text-indigo-600 font-semibold uppercase tracking-wider mb-4">
+          <p className="text-green-800 font-semibold uppercase tracking-wider mb-4">
             Our Purpose
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             Empowering East Africa, One Voice at a Time
           </h2>
-          <div className="space-y-5 text-lg text-slate-700 leading-relaxed">
+          <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
             <p>
-              <span className="font-semibold text-gray-900">Mission:</span>{" "}
+              <span className="font-semibold text-xl text-gray-900">Mission:</span>{" "}
               To alleviate poverty, promote access to healthcare services, and
               enhance the socioeconomic welfare of vulnerable East Africans—
               through individual empowerment, community development, and systemic
               change.
             </p>
             <p>
-              <span className="font-semibold text-gray-900">Vision:</span>{" "}
+              <span className="font-semibold text-xl text-gray-900">Vision:</span>{" "}
               A society where diversity is celebrated, all voices are heard, and
               every person has equitable access to resources and opportunities.
             </p>
           </div>
           <a
             href="#our-story"
-            className="inline-flex items-center text-indigo-600 font-medium mt-6 hover:underline group"
+            className="inline-flex items-center text-green-500 font-medium mt-6 hover:underline group"
           >
             Read Our Story
             <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -53,11 +53,11 @@ export default function StatementSection() {
           <img
             src={missionImage}
             alt="Community empowerment"
-            className="w-full h-full object-cover opacity-70 md:opacity-40 md:group-hover:opacity-70 transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover opacity-70 md:opacity-40 md:group-hover:opacity-70 transition-transform duration-500 scale-105 group-hover:scale-125"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
         </motion.div>
       </div>
     </section>
   );
-};
+}

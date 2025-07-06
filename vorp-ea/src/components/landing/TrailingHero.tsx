@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { trackEvent } from "../../lib/analytics";
+import { Link } from "react-router-dom";
 
 export default function TrailingHero() {
 	const ref = useRef(null);
@@ -59,21 +60,22 @@ export default function TrailingHero() {
 					<p className="text-lg drop-shadow-sm">
 						Your support fuels peace, hope, and healing in East Africa. Help us build a resilient tomorrow.
 					</p>
-					<a
-						href="#"
+					<Link
+						to="/donate"
 						onClick={() =>
 							trackEvent({
 								action: "click_donate",
 								category: "CTA",
-								label: "Trailing Hero > Donate Button",
-							})
-						}
-						className="bg-gradient-to-r from-red-500 via-pink-600 to-red-700 text-white font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 hover:animate-pulse inline-block w-max"
-					>
-						Donate
-					</a>
+                                        label: "TrailingHero > Donate Button",
+                                    })
+                                }
+                                className="bg-white text-red-600 text-xl font-semibold px-6 py-3 rounded-md shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2"
+                            >
+                                <span>Donate</span>
+                                <i className="fa-solid fa-heart animate-pulse text-red-500 text-xl"></i>
+                            </Link>
 				</motion.div>
 			</div>
 		</section>
 	);
-};
+}
