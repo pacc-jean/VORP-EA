@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 
@@ -26,7 +25,7 @@ export default function DonateHero() {
             className="text-center max-w-3xl mx-auto z-10"
         >
             <div className="inline-flex items-center justify-center mb-4">
-            <Heart className="w-8 h-8 text-red-300 animate-pulse" />
+            <i className="fa-solid fa-heart animate-pulse text-red-700 text-7xl"></i>
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
             Give Hope. Fuel Change.
