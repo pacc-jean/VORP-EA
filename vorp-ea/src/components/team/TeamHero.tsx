@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function TeamHero() {
   return (
-    <section className="w-full bg-gradient-to-b from-white to-slate-50 py-20">
+    <section className="w-full bg-gradient-to-b from-white to-slate-50 py-20 md:mt-[150px]">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Left: Text */}
         <motion.div
