@@ -27,7 +27,7 @@ const navItems = [
 const pathMap: Record<string, string> = {
     'Home': '/',
     'Work With Us': '/work-with-us',
-    'Learn & Share': '/learn&share',
+    'Learn & Share': '/learn-share',
     'Partner With Us': '/partners',
     'Programs': '/programs',
     'Our Work': '/our-work',

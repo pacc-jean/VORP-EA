@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage';
 import DonatePage from './pages/DonatePage';
 import TeamPage from './pages/TeamPage';
 import WorkWithUsPage from "./pages/WorkWwithUsPage";
+import LearnSharePage from "./pages/LearnSharePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/work-with-us" element={<WorkWithUsPage />} />
+        <Route path="/learn-share" element={<LearnSharePage />} />
       </Routes>
       <Footer />
     </>
