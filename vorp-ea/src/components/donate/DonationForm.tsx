@@ -15,7 +15,7 @@ export default function DonationForm() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center text-gray-900"
         >
-          Make a Donation
+          Make a Pledge
         </motion.h2>
 
         <form className="bg-gray-50 p-8 rounded-2xl shadow-lg space-y-6">
