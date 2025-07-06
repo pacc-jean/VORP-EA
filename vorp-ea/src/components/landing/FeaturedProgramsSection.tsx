@@ -71,9 +71,6 @@ export default function FeaturedProgramsSection() {
 							{/* Glossy base overlay */}
 							<span className="pointer-events-none absolute inset-0 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-[4px] z-0" />
 
-							{/* Shine animation */}
-							<span className="pointer-events-none absolute -top-1/2 left-[-60%] w-[200%] h-[200%] rotate-45 bg-gradient-to-r from-white/10 via-white/30 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 animate-shimmer rounded-2xl" />
-
 							{/* Card Content */}
 							<div className="relative z-20">
 								<div className={`w-14 h-14 flex items-center justify-center rounded-full ${program.color} mb-5 shadow-md`}>
