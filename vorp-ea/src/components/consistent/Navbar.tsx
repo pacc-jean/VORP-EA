@@ -24,12 +24,12 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
     const location = useLocation();
-    const solidRoutes = ["/team",];
+    const solidRoutes = ["/about"]; // Solid navbar routes here
     const isSolidPage = solidRoutes.includes(location.pathname);
 
     useEffect(() => {
         if (isSolidPage) {
-            setScrolled(true); // Force solid navbar
+            setScrolled(true);
             return;
         }
 
