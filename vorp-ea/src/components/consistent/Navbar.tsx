@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { trackEvent } from "../../lib/analytics";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
     {
@@ -23,13 +23,22 @@ export default function Navbar() {
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [scrolled, setScrolled] = useState(false);
 
+    const location = useLocation();
+    const solidRoutes = ["/team",];
+    const isSolidPage = solidRoutes.includes(location.pathname);
+
     useEffect(() => {
+        if (isSolidPage) {
+            setScrolled(true); // Force solid navbar
+            return;
+        }
+
         const onScroll = () => {
             setScrolled(window.scrollY > 50);
         };
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [isSolidPage]);
 
     return (
         <header
