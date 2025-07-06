@@ -57,7 +57,7 @@ const members: Member[] = [
   },
   {
     name: "Rozzie Nicole",
-    role: "Secretary",
+    role: "Human Resources Manager",
     bio: "My name is Rozzie Nicole, and I am a passionate community volunteer working with VORP-EA, an organization dedicated to creating positive change in underprivileged communities. My work mainly focuses on youth mentorship, where I guide and support young people through education and awareness on various social issues. I believe in empowering the next generation to rise above challenges and become agents of change in their communities.",
     image: nicoleImg,
     category: "volunteer",
