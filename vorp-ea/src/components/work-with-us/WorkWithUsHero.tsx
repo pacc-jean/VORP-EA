@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function WorkWithUsHero() {
   return (
@@ -22,12 +21,12 @@ export default function WorkWithUsHero() {
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-200">
           At VORP‑EA, we believe lasting change happens when passionate people join hands with communities across East Africa.
         </p>
-        <Link
-          to="#opportunities"
+        <a
+          href="#opportunities"
           className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg text-lg transition"
         >
           Explore Opportunities
-        </Link>
+        </a>
       </motion.div>
         {/* Bottom wave divider */} 
         <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
