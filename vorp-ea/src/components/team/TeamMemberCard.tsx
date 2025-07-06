@@ -53,7 +53,7 @@ export default function TeamMemberCard({
           {isLongBio && (
             <button
               onClick={toggleReadMore}
-              className="ml-1 text-xs text-blue-400 underline hover:text-blue-300 transition"
+              className="ml-1 text-xs text-green-400 underline hover:text-green-600 transition"
             >
               {expanded ? "Show less" : "Read more"}
             </button>
@@ -70,7 +70,7 @@ export default function TeamMemberCard({
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <FaTwitter className="text-xl hover:text-blue-400 transition" />
+                <FaTwitter className="text-xl hover:text-green-600 transition" />
               </a>
             )}
             {linkedinUrl && (
@@ -80,7 +80,7 @@ export default function TeamMemberCard({
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="text-xl hover:text-blue-500 transition" />
+                <FaLinkedin className="text-xl hover:text-green-600 transition" />
               </a>
             )}
           </div>

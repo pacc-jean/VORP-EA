@@ -85,10 +85,10 @@ export default function TeamTabs() {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-8 flex-wrap gap-2 sm:gap-4">
           <button
             onClick={() => setActiveTab("board")}
-            className={`px-6 py-2 rounded-full text-xm md:text-base font-semibold transition ${
+            className={`px-4 py-1.5 rounded-full text-xm md:text-lg font-medium md:font-bold transition ${
               activeTab === "board"
                 ? "bg-green-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -98,7 +98,7 @@ export default function TeamTabs() {
           </button>
           <button
             onClick={() => setActiveTab("volunteers")}
-            className={`ml-4 px-6 py-2 rounded-full text-xm md:text-base font-semibold transition ${
+            className={`px-4 py-1.5 rounded-full text-xm md:text-lg font-medium md:font-bold transition ${
               activeTab === "volunteers"
                 ? "bg-green-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -108,7 +108,7 @@ export default function TeamTabs() {
           </button>
           <button
             onClick={() => setActiveTab("partners")}
-            className={`ml-4 px-6 py-2 rounded-full text-xm md:text-base font-semibold transition ${
+            className={`px-4 py-1.5 rounded-full text-xm md:text-lg font-medium md:font-bold transition ${
               activeTab === "partners"
                 ? "bg-green-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
