@@ -43,7 +43,7 @@ export default function TrailingHero() {
 			</div>
 
 			{/* Hero Content */}
-			<div className="relative z-10 max-w-7xl mx-auto px-2 h-full pt-64 flex items-start">
+			<div className="relative z-10 max-w-7xl mx-auto px-2 h-full pt-64 flex items-center justify-center">
 				<motion.div
 					ref={ref}
 					initial="hidden"
@@ -52,12 +52,12 @@ export default function TrailingHero() {
 						hidden: { opacity: 0, y: 20 },
 						visible: { opacity: 1, y: 0, transition: { duration: 1 } },
 					}}
-					className="md:w-1/2 text-center md:text-left space-y-6"
+					className="md:w-1/2 text-center space-y-6"
 				>
-					<h2 className="text-4xl font-serif font-semibold leading-tight drop-shadow-md">
+					<h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight drop-shadow-md">
 						Together, we rise.
 					</h2>
-					<p className="text-lg drop-shadow-sm">
+					<p className="text-lg md:text-xl drop-shadow-sm">
 						Your support fuels peace, hope, and healing in East Africa. Help us build a resilient tomorrow.
 					</p>
 					<Link
