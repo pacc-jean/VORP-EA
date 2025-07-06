@@ -25,18 +25,18 @@ const navItems = [
 ];
 
 const pathMap: Record<string, string> = {
-    Home: '/',
-    'Work With Us': '/work',
+    'Home': '/',
+    'Work With Us': '/work-with-us',
     'Learn & Share': '/learn&share',
     'Partner With Us': '/partners',
-    Programs: '/programs',
+    'Programs': '/programs',
     'Our Work': '/our-work',
     'Our Impact': '/impact',
     'About Us': '/about',
     'Our History': '/history',
     'Our Team': '/team',
     'Our Partners': '/partners',
-    Donate: '/donate',
+    'Donate': '/donate',
 };
 
 export default function MobileBottomNav() {
