@@ -25,7 +25,7 @@ export default function WorkWithUsHero() {
           href="#opportunities"
           className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg text-lg transition"
         >
-          Explore Opportunities
+          Opportunities
         </a>
       </motion.div>
         {/* Bottom wave divider */} 
