@@ -1,5 +1,5 @@
-import { Tag } from "lucide-react"; // For role tag icon
-import { FaTwitter, FaLinkedin } from "react-icons/fa"; // Socials
+import { Tag } from "lucide-react";
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 
 interface Props {
