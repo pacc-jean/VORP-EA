@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function DonateHero() {
   return (
-    <section className="relative bg-gray-900 text-white w-screen max-w-full h-screen overflow-hidden flex items-center justify-center px-6">
+    <section className="relative bg-gray-900 text-white w-screen max-w-full h-[100vh] md:h-[140vh] overflow-hidden flex items-center justify-center px-6">
 
         {/* Background Image + Overlay */}
             <div className="absolute inset-0 z-0">
@@ -41,6 +41,20 @@ export default function DonateHero() {
             Donate Now
             </a>
         </motion.div>
+        {/* Bottom wave divider */}
+        <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+            <svg
+            className="relative block w-full h-[100px]"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            viewBox="0 0 1200 120"
+            >
+            <path
+                d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"
+                className="fill-white"
+            />
+            </svg>
+        </div>
     </section>
   );
 }

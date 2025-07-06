@@ -3,7 +3,7 @@ import { trackEvent } from "../../lib/analytics";
 
 export default function LeadingHero() {
   return (
-    <section className="relative bg-gray-900 text-white w-screen max-w-full h-screen overflow-hidden">
+    <section className="relative bg-gray-900 text-white w-screen max-w-full h-[100vh] md:h-[140vh] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -15,14 +15,14 @@ export default function LeadingHero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl ml-2 md:ml-10 px-2 md:px-24 h-full flex items-start pt-[170px] md:pt-[300px]">
+      <div className="relative z-10 max-w-7xl ml-2 md:ml-14 px-2 md:px-24 h-full flex items-center">
         <motion.div
           className="max-w-2xl space-y-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold leading-tight">
             Building Peace,<br />
             <span className="text-green-600">Restoring Hope in East Africa</span>
           </h1>

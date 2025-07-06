@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function TeamHero() {
   return (
     <section
-      className="relative w-full h-[100vh] md:h-[150vh] bg-cover bg-center bg-no-repeat"
+      className="relative w-full h-[100vh] md:h-[140vh] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/team-hero.jpg')" }}
     >
       {/* Overlay */}

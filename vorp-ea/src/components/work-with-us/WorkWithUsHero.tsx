@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function WorkWithUsHero() {
   return (
     <section
-      className="relative w-full h-[100vh] md:h-[150vh] bg-cover bg-center flex items-center justify-center text-white"
+      className="relative w-full h-[100vh] md:h-[140vh] bg-cover bg-center flex items-center justify-center text-white"
       style={{ backgroundImage: "url('/work-hero.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/50" />
@@ -29,6 +29,7 @@ export default function WorkWithUsHero() {
           Explore Opportunities
         </Link>
       </motion.div>
+        {/* Bottom wave divider */} 
         <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
             <svg
             className="relative block w-full h-[100px]"
