@@ -24,6 +24,20 @@ export default function TeamHero() {
           From grassroots volunteers to our leadership board, every team member
         </p>
       </motion.div>
+      {/* Bottom wave divider */}
+      <div className="absolute bottom-0 w-full overflow-hidden leading-[0]">
+        <svg
+          className="relative block w-full h-[100px]"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 120"
+        >
+          <path
+            d="M0,0 C300,100 900,0 1200,100 L1200,120 L0,120 Z"
+            className="fill-gray-100"
+          />
+        </svg>
+      </div>
     </section>
   );
 }
