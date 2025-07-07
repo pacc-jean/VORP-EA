@@ -48,7 +48,7 @@ export default function ImpactStories() {
                 </p>
                 <a
                   href="#"
-                  className="mt-4 inline-block text-blue-600 hover:underline"
+                  className="mt-4 inline-block text-green-600 hover:underline"
                 >
                   Read more
                 </a>
