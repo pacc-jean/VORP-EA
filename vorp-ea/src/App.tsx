@@ -8,7 +8,9 @@ import DonatePage from './pages/DonatePage';
 import TeamPage from './pages/TeamPage';
 import WorkWithUsPage from "./pages/WorkWwithUsPage";
 import LearnSharePage from "./pages/LearnSharePage";
-import PartnerWithUs from "./pages/PartnerWithUs";
+import PartnerWithUs from "./pages/PartnerWithUsPage";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/partner-with-us" element={<PartnerWithUs />} />
       </Routes>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
