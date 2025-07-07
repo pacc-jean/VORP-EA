@@ -12,8 +12,6 @@ import PartnersSection from "../components/landing/PartnersSection";
 import StoriesSection from "../components/landing/StoriesSection";
 import NewsletterSignup from "../components/landing/NewsletterSignup";
 import TrailingHero from "../components/landing/TrailingHero";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function LandingPage() {
   const [sectionsVisible, setSectionsVisible] = useState(true);
@@ -88,8 +86,6 @@ export default function LandingPage() {
       </AnimatePresence>
 
       <TrailingHero />
-      <Analytics />
-      <SpeedInsights />
     </div>
   );
 }
