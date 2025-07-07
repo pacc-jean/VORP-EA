@@ -152,7 +152,7 @@ export default function Navbar() {
                                                 // "Our Impact": "/impact",
                                                 "Work With Us": "/work-with-us",
                                                 "Learn & Share": "/learn-share",
-                                                // "Partner With Us": "/partner",
+                                                "Partner With Us": "/partner-with-us",
                                                 // "Our History": "/history",
                                             };
 

@@ -8,7 +8,7 @@ export default function DonateHero() {
         {/* Background Image + Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/donatehero-bg.jpg"
+                    src="/donate-hero.jpg"
                     alt="Give towards a better future"
                     className="w-full h-full object-cover"
                 />

@@ -7,7 +7,7 @@ export default function LeadingHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/leadinghero-bg.jpg"
+          src="/leading-hero.jpg"
           alt="Community at work"
           className="w-full h-full object-cover"
         />

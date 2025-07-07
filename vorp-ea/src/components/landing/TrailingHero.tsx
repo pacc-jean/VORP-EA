@@ -35,7 +35,7 @@ export default function TrailingHero() {
 			{/* Background Image */}
 			<div className="absolute inset-0 z-0">
 				<img
-					src="/trailinghero-bg.jpg"
+					src="/trailing-hero.jpg"
 					alt="Community at work"
 					className="w-full h-full object-cover opacity-100"
 				/>
