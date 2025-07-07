@@ -21,7 +21,7 @@ export default function PartnerHero() {
         transition={{ duration: 1 }}
       >
         {/* Handshake Icon */}
-        <Handshake className="mx-auto mb-4 text-green-400" size={64} />
+        <Handshake className="mx-auto mb-4 animate-bounce text-green-400" size={72} />
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Strategic Alliances for Lasting Change
