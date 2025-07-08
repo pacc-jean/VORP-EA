@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Shapes } from "lucide-react";
 
 export default function LearnShareHero() {
   return (
@@ -10,6 +11,7 @@ export default function LearnShareHero() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <Shapes size={72} className="mx-auto mb-4 text-green-700 animate-pulse" />
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

@@ -5,7 +5,7 @@ import PartnerOpportunities from "../components/partner-with-us/PartnerOpportuni
 import ImpactStories from "../components/partner-with-us/ImpactStories";
 import GetStarted from "../components/partner-with-us/GetStarted";
 
-export default function PartnerWithUs() {
+export default function PartnerWithUsPage() {
   return (
     <>
       <PartnerHero />

@@ -147,7 +147,7 @@ export default function Navbar() {
                                                 "Our Team": "/team",
                                                 //"Our Partners": "/partners",
                                                 // "About Us": "/about",
-                                                // "Programs": "/programs",
+                                                "Programs": "/programs",
                                                 // "Our Work": "/work",
                                                 // "Our Impact": "/impact",
                                                 "Work With Us": "/work-with-us",
