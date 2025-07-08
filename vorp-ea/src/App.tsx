@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/consistent/Navbar";
 import MobileBottomNav from "./components/consistent/MobileBottomNav";
 import Footer from "./components/consistent/Footer";
+import ScrollToTop from "./components/navigation/ScrollToTop";
 import LandingPage from './pages/LandingPage';
 import DonatePage from './pages/DonatePage';
 import TeamPage from './pages/TeamPage';
@@ -18,6 +19,7 @@ function App() {
     <>
       <Navbar />
       <MobileBottomNav />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/donate" element={<DonatePage />} />
