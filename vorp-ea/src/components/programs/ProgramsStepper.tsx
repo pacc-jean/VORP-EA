@@ -29,6 +29,9 @@ export default function ProgramsStepper() {
 
   return (
     <div className="py-16 px-4 bg-white">
+      <h2 className="text-3xl font-bold text-center mb-12">
+        Targeted Initiatives Driving Transformation
+      </h2>
       <div className="max-w-3xl mx-auto">
         <div className="flex flex-col bg-white p-6 rounded-2xl shadow-lg">
           {steps.map((step, index) => (
