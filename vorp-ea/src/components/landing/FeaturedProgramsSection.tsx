@@ -39,7 +39,7 @@ const programs = [
 
 export default function FeaturedProgramsSection() {
 	return (
-		<section className="w-full bg-slate-900 py-24" id="programs">
+		<section className="w-full bg-green-700 py-24">
 			<div className="max-w-7xl mx-auto px-4">
 				{/* Section Header */}
 				<motion.div
@@ -80,7 +80,7 @@ export default function FeaturedProgramsSection() {
 									{program.title}
 								</h3>
 								<p className="text-white/80 text-lg">
-									<span className="text-green-500 text-xl font-extrabold">
+									<span className="text-black text-xl font-extrabold">
 										<CountUp
 											start={0}
 											end={program.number}
