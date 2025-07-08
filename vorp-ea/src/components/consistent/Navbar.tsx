@@ -7,15 +7,28 @@ import { Link, useLocation } from "react-router-dom";
 const navItems = [
     {
         title: "Join Us",
-        items: ["Work With Us", "Learn & Share", "Partner With Us"],
+        items: [
+            { name: "Work With Us", path: "/work-with-us" },
+            { name: "Learn & Share", path: "/learn-share" },
+            { name: "Partner With Us", path: "/partner-with-us" },
+        ],
     },
     {
         title: "What We Do",
-        items: ["Programs", "Our Work", "Our Impact"],
+        items: [
+            { name: "Programs", path: "/programs" },
+            { name: "Our Work", path: "/our-work" },
+            { name: "Our Impact", path: "/our-impact" },
+        ],
     },
     {
         title: "Who We Are",
-        items: ["About Us", "Our History", "Our Team", "Our Partners"],
+        items: [
+            { name: "About Us", path: "/about" },
+            { name: "Our History", path: "/history" },
+            { name: "Our Team", path: "/team" },
+            { name: "Our Partners", path: "/partners" },
+        ],
     },
 ];
 
@@ -40,17 +53,21 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, [isSolidPage]);
 
+    // Flatten navItems to match current path
+    const allNavLinks = navItems.flatMap(({ title, items }) =>
+        items.map(({ name, path }) => ({ title, name, path }))
+    );
+    const activeNav = allNavLinks.find(({ path }) => path === location.pathname);
+    const activeTitle = activeNav?.title;
+    const activeItem = activeNav?.name;
+
     return (
         <header
             className={`hidden md:block fixed w-full top-0 z-50 transition-colors duration-300 ${
                 scrolled ? "bg-white shadow-sm" : "bg-transparent"
             }`}
         >
-            <nav
-                className="relative"
-                onMouseLeave={() => setHoveredMenu(null)}
-            >
-                {/* Inner nav content container with padding + max width */}
+            <nav className="relative" onMouseLeave={() => setHoveredMenu(null)}>
                 <div className="max-w-7xl mx-auto px-4">
                     <div className={`flex items-center justify-between pt-4 ${scrolled ? "pb-1" : "pb-2"}`}>
                         <Link to="/" className="flex items-center flex-shrink-0">
@@ -73,18 +90,22 @@ export default function Navbar() {
                                         }
                                     >
                                         <span
-                                            className={`flex items-center gap-1 text-lg font-medium transition-colors ${
-                                                hoveredMenu === title
-                                                    ? "text-red-600"
+                                            className={`flex items-center gap-1 text-lg font-medium transition-colors border-b-2 ${
+                                                activeTitle === title
+                                                    ? "text-green-600 border-green-600"
+                                                    : hoveredMenu === title
+                                                    ? "text-red-600 border-transparent"
                                                     : scrolled
-                                                    ? "text-black"
-                                                    : "text-white"
+                                                    ? "text-black border-transparent"
+                                                    : "text-white border-transparent"
                                             }`}
                                         >
                                             {title}
                                             <ChevronDown
                                                 className={`w-4 h-4 transition-transform duration-200 ${
-                                                    hoveredMenu === title
+                                                    activeTitle === title
+                                                        ? "rotate-[-90deg] text-green-600"
+                                                        : hoveredMenu === title
                                                         ? "rotate-[-90deg] text-red-600"
                                                         : scrolled
                                                         ? "text-black"
@@ -116,7 +137,7 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Dropdown spans full screen */}
+                {/* Dropdown */}
                 <AnimatePresence>
                     {hoveredMenu && (
                         <motion.div
@@ -142,55 +163,40 @@ export default function Navbar() {
                                         className="flex flex-col min-w-[120px]"
                                         onMouseEnter={() => setHoveredMenu(title)}
                                     >
-                                        {items.map((item) => {
-                                            const itemPathMap: Record<string, string> = {
-                                                "Our Team": "/team",
-                                                //"Our Partners": "/partners",
-                                                // "About Us": "/about",
-                                                "Programs": "/programs",
-                                                // "Our Work": "/work",
-                                                // "Our Impact": "/impact",
-                                                "Work With Us": "/work-with-us",
-                                                "Learn & Share": "/learn-share",
-                                                "Partner With Us": "/partner-with-us",
-                                                // "Our History": "/history",
-                                            };
-
-                                            const path = itemPathMap[item] || "#";
-
-                                            return (
-                                                <Link
-                                                    key={item}
-                                                    to={path}
-                                                    onClick={() =>
-                                                        trackEvent({
-                                                            action: "click_nav_link",
-                                                            category: "Navigation",
-                                                            label: `${title} > ${item}`,
-                                                        })
-                                                    }
-                                                    className={`group relative text-sm mb-1 transition-colors cursor-pointer ${
-                                                        hoveredMenu === title
-                                                            ? scrolled
-                                                                ? "text-gray-900 font-semibold"
-                                                                : "text-white font-semibold"
-                                                            : scrolled
-                                                            ? "text-gray-500"
-                                                            : "text-gray-200"
-                                                    } hover:text-red-500`}
+                                        {items.map(({ name, path }) => (
+                                            <Link
+                                                key={name}
+                                                to={path}
+                                                onClick={() =>
+                                                    trackEvent({
+                                                        action: "click_nav_link",
+                                                        category: "Navigation",
+                                                        label: `${title} > ${name}`,
+                                                    })
+                                                }
+                                                className={`group relative text-sm mb-1 transition-colors cursor-pointer ${
+                                                    activeItem === name
+                                                        ? "text-green-600 font-bold underline"
+                                                        : hoveredMenu === title
+                                                        ? scrolled
+                                                            ? "text-gray-900 font-semibold"
+                                                            : "text-white font-semibold"
+                                                        : scrolled
+                                                        ? "text-gray-500"
+                                                        : "text-gray-200"
+                                                } hover:text-red-500`}
+                                            >
+                                                <span
+                                                    className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
+                                                    group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
+                                                    ${scrolled ? "text-red-600" : "text-red-600"}`}
+                                                    style={{ width: "1em" }}
                                                 >
-                                                    <span
-                                                        className={`absolute left-0 top-1/2 -translate-y-1/2 font-bold transition-all duration-200 transform
-                                                        group-hover:opacity-100 group-hover:translate-x-0 opacity-0 -translate-x-2
-                                                        ${scrolled ? "text-red-600" : "text-red-600"}`}
-                                                        style={{ width: "1em" }}
-                                                    >
-                                                        &#x276F;
-                                                    </span>
-                                                    <span className="pl-5">{item}</span>
-                                                </Link>
-                                            );
-                                        })}
+                                                    &#x276F;
+                                                </span>
+                                                <span className="pl-5">{name}</span>
+                                            </Link>
+                                        ))}
                                     </div>
                                 ))}
                             </div>

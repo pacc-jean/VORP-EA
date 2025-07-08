@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, Users, Briefcase, Info, Heart, X } from 'lucide-react';
 import { trackEvent } from '../../lib/analytics';
@@ -10,47 +10,67 @@ const navItems = [
     {
         title: 'Join Us',
         icon: <Users size={20} />,
-        items: ['Work With Us', 'Learn & Share', 'Partner With Us'],
+        items: [
+            { name: 'Work With Us', path: '/work-with-us' },
+            { name: 'Learn & Share', path: '/learn-share' },
+            { name: 'Partner With Us', path: '/partner-with-us' },
+        ],
     },
     {
         title: 'What We Do',
         icon: <Briefcase size={20} />,
-        items: ['Programs', 'Our Work', 'Our Impact'],
+        items: [
+            { name: 'Programs', path: '/programs' },
+            { name: 'Our Work', path: '/our-work' },
+            { name: 'Our Impact', path: '/our-impact' },
+        ],
     },
     {
         title: 'Who We Are',
         icon: <Info size={20} />,
-        items: ['About Us', 'Our History', 'Our Team', 'Our Partners'],
+        items: [
+            { name: 'About Us', path: '/about' },
+            { name: 'Our History', path: '/history' },
+            { name: 'Our Team', path: '/team' },
+            { name: 'Our Partners', path: '/partners' },
+        ],
     },
 ];
-
-const pathMap: Record<string, string> = {
-    'Home': '/',
-    'Work With Us': '/work-with-us',
-    'Learn & Share': '/learn-share',
-    'Partner With Us': '/partner-with-us',
-    'Programs': '/programs',
-    'Our Work': '/our-work',
-    'Our Impact': '/impact',
-    'About Us': '/about',
-    'Our History': '/history',
-    'Our Team': '/team',
-    'Our Partners': '/partners',
-    'Donate': '/donate',
-};
 
 export default function MobileBottomNav() {
     const location = useLocation();
     const currentPath = location.pathname;
+    const drawerRef = useRef<HTMLDivElement>(null);
 
-    // Track which tab should appear active based on URL
+    const [activeDrawer, setActiveDrawer] = useState<string | null>(null);
+
+    // Detect click outside drawer
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (drawerRef.current && !drawerRef.current.contains(e.target as Node)) {
+                setActiveDrawer(null);
+            }
+        };
+
+        if (activeDrawer) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [activeDrawer]);
+
+    // Determine active tab (top nav item)
     const activeTab = useMemo(() => {
         if (currentPath === '/') return 'Home';
         if (currentPath === '/donate') return 'Donate';
 
         for (const nav of navItems) {
             for (const item of nav.items) {
-                if (pathMap[item] === currentPath) {
+                if (item.path === currentPath) {
                     return nav.title;
                 }
             }
@@ -58,9 +78,6 @@ export default function MobileBottomNav() {
 
         return null;
     }, [currentPath]);
-
-    // Track which drawer is open
-    const [activeDrawer, setActiveDrawer] = useState<string | null>(null);
 
     const handleDrawerToggle = (title: string) => {
         setActiveDrawer((prev) => (prev === title ? null : title));
@@ -77,7 +94,7 @@ export default function MobileBottomNav() {
                             activeTab === 'Home' ? 'text-black' : 'text-gray-500'
                         }`}
                     >
-                        <Link to={pathMap['Home']} className="flex flex-col items-center">
+                        <Link to="/" className="flex flex-col items-center">
                             <Home size={20} />
                             <span className="mt-1 text-[11px]">Home</span>
                         </Link>
@@ -116,7 +133,7 @@ export default function MobileBottomNav() {
                         }`}
                     >
                         <Link
-                            to={pathMap['Donate']}
+                            to="/donate"
                             onClick={() =>
                                 trackEvent({
                                     action: 'click_donate',
@@ -154,6 +171,7 @@ export default function MobileBottomNav() {
                         exit={{ y: '100%' }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                         className="fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-xl p-6 z-[60] md:hidden"
+                        ref={drawerRef}
                     >
                         <button
                             onClick={() => setActiveDrawer(null)}
@@ -168,23 +186,33 @@ export default function MobileBottomNav() {
                         <div className="flex flex-col space-y-4">
                             {navItems
                                 .find((nav) => nav.title === activeDrawer)
-                                ?.items.map((item) => (
-                                    <Link
-                                        key={item}
-                                        to={pathMap[item] || '#'}
-                                        onClick={() => {
-                                            setActiveDrawer(null);
-                                            trackEvent({
-                                                action: 'click_mobile_drawer',
-                                                category: 'Navigation',
-                                                label: `${activeDrawer} > ${item}`,
-                                            });
-                                        }}
-                                        className="w-full bg-gray-100 text-gray-800 rounded-md py-2 font-semibold hover:bg-gray-200 transition text-center"
-                                    >
-                                        {item}
-                                    </Link>
-                                ))}
+                                ?.items.map(({ name, path }) => {
+                                    const isActive = location.pathname === path;
+
+                                    return (
+                                        <Link
+                                            key={name}
+                                            to={path}
+                                            onClick={() => {
+                                                // Delay drawer close slightly to allow visual update
+                                                setTimeout(() => setActiveDrawer(null), 100);
+                                                trackEvent({
+                                                    action: 'click_mobile_drawer',
+                                                    category: 'Navigation',
+                                                    label: `${activeDrawer} > ${name}`,
+                                                });
+                                            }}
+                                            className={`w-full py-2 rounded-md text-center font-semibold transition
+                                                ${
+                                                    isActive
+                                                        ? 'text-green-700 bg-green-100'
+                                                        : 'text-gray-800 hover:bg-gray-100'
+                                                }`}
+                                        >
+                                            {name}
+                                        </Link>
+                                    );
+                                })}
                         </div>
                     </motion.div>
                 )}
