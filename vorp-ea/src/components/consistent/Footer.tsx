@@ -1,119 +1,134 @@
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTiktok,
-} from "react-icons/fa";
-import { trackEvent } from "../../lib/analytics";
-import { Link } from "react-router-dom";
-
-const footerLinks = [
-  {
-    title: "Company",
-    links: ["About Us", "Careers", "Reports", "Blog"],
-  },
-  {
-    title: "Resources",
-    links: ["Help Center", "Contact", "Privacy Policy", "Terms of Service"],
-  },
-];
-
-const socialLinks = [
-  {
-    name: "Facebook",
-    icon: <FaFacebookF size={20} />,
-    href: "https://www.facebook.com/VORP-EA",
-  },
-  {
-    name: "Twitter",
-    icon: <FaTwitter size={20} />,
-    href: "#",
-  },
-  {
-    name: "Instagram",
-    icon: <FaInstagram size={20} />,
-    href: "https://www.instagram.com/vorp_ke/",
-  },
-  {
-    name: "TikTok",
-    icon: <FaTiktok size={20} />,
-    href: "https://www.tiktok.com/@vorpea",
-  },
-  {
-    name: "LinkedIn",
-    icon: <FaLinkedinIn size={20} />,
-    href: "#",
-  },
-];
+import { Link } from 'react-router-dom'
+import { Facebook, Instagram } from 'lucide-react'
+import { FaTiktok } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="w-full overflow-x-hidden bg-white border-gray-200 pb-20 md:pt-10 md:pb-2 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-8 md:gap-16">
-        {/* Logo & Description */}
-        <div className="flex flex-col space-y-4 max-w-md">
-          <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Logo" className="h-20 w-20 object-contain" />
-          </Link>
-          <p className="text-gray-600 text-sm leading-relaxed">
-            VORP-EA — Voice of Reconciliation and Pacification East Africa. Bringing communities together with heart & impact.
-          </p>
-          <p className="text-gray-400 text-xs">
-            &copy; {new Date().getFullYear()} VORP-EA. All rights reserved.
-          </p>
+    <footer className="bg-white text-sm pt-12 pb-6 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Top */}
+        <div className="flex flex-col md:flex-row justify-between pb-6">
+          {/* Left Section: Logo & Prose */}
+          <div className="flex-1 px-4">
+            <img
+              src="/logo.png"
+              alt="VORP-EA Logo"
+              className="mb-4 w-[200px] h-auto"
+            />
+            <p className="text-black">
+              VORP-EA — Voice of Reconciliation and Pacification East Africa.
+              Bringing communities together with heart & impact.
+              <br />
+              <span className="text-gray-700">Nurturing peace, empowering change.</span>
+            </p>
+          </div>
+
+          {/* Vertical divider */}
+          <div className="hidden md:block w-px bg-gray-700 mx-4" />
+
+          {/* Middle Section: Quick Links */}
+          <div className="flex-1 px-4 pt-8 md:pt-0">
+            <h4 className="text-black font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><Link to="/" className="hover:text-green-700">Home</Link></li>
+              <li><Link to="/about" className="hover:text-green-700">About Us</Link></li>
+              <li><Link to="/programs" className="hover:text-green-700">Programs</Link></li>
+              <li><Link to="/impact" className="hover:text-green-700">Impact</Link></li>
+              <li><Link to="/work-with-us" className="hover:text-green-700">Work with Us</Link></li>
+              <li><Link to="/donate" className="hover:text-green-700">Donate</Link></li>
+            </ul>
+          </div>
+
+          {/* Vertical divider */}
+          <div className="hidden md:block w-px bg-gray-700 mx-4" />
+
+          {/* Right Section: Public Emails */}
+          <div className="flex-1 px-4 pt-8 md:pt-0">
+            <h4 className="text-black font-semibold mb-4">Public Emails</h4>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="mailto:info@vorp-ea.org"
+                  className="hover:text-green-700"
+                >
+                  info@vorp-ea.org
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:programs@vorp-ea.org"
+                  className="hover:text-green-700"
+                >
+                  programs@vorp-ea.org
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:partners@vorp-ea.org"
+                  className="hover:text-green-700"
+                >
+                  partners@vorp-ea.org
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:careers@vorp-ea.org"
+                  className="hover:text-green-700"
+                >
+                  careers@vorp-ea.org
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:donations@vorp-ea.org"
+                  className="hover:text-green-700"
+                >
+                  donations@vorp-ea.org
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:support@vorp-ea.org"
+                  className="hover:text-green-700"
+                >
+                  support@vorp-ea.org
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Navigation Links + Socials */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-24 flex-1">
-          {footerLinks.map(({ title, links }) => (
-            <div key={title} className="flex flex-col space-y-3">
-              <h3 className="font-semibold text-gray-900">{title}</h3>
-              {links.map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  onClick={() =>
-                    trackEvent({
-                      action: "click_footer_link",
-                      category: "Footer",
-                      label: `${title} > ${link}`,
-                    })
-                  }
-                  className="text-gray-600 text-sm hover:text-red-600 transition-colors"
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
-          ))}
-
-          <div className="flex flex-col space-y-3">
-            <h3 className="font-semibold text-gray-900">Social</h3>
-            <div className="flex flex-wrap gap-4">
-              {socialLinks.map(({ name, icon, href }) => (
-                <a
-                  key={name}
-                  href={href}
-                  aria-label={name}
-                  className="text-gray-600 hover:text-red-600 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    trackEvent({
-                      action: "click_social",
-                      category: "Footer",
-                      label: name,
-                    })
-                  }
-                >
-                  {icon}
-                </a>
-              ))}
-            </div>
+        {/* Bottom */}
+        <div className="pt-6 mt-10 border-t border-gray-700 text-center space-y-4">
+          {/* Socials */}
+          <div className="flex justify-center space-x-6">
+            <a href="https://www.facebook.com/VORP-EA" target="_blank" rel="noopener noreferrer">
+              <Facebook size={20} className="hover:text-green-600" />
+            </a>
+            <a href="https://www.tiktok.com/@vorpea" target="_blank" rel="noopener noreferrer">
+              <FaTiktok size={20} className="hover:text-green-600" />
+            </a>
+            <a href="https://www.instagram.com/vorp_ke/" target="_blank" rel="noopener noreferrer">
+              <Instagram size={20} className="hover:text-green-600" />
+            </a>
           </div>
+
+          {/* Address */}
+          <p className="text-gray-400">
+            Fatima Apartments, Arwing Kodhek off Marcus Garvey, Kilimani, Nairobi, Kenya
+          </p>
+
+          {/* Contact */}
+          <p className="text-gray-400">
+            Phone: <span className="text-black">+254 795424196</span> || <span className="text-black">0202025477</span>
+          </p>
+
+          {/* Copyright */}
+          <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} VORP-EA. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
