@@ -1,5 +1,6 @@
 import { Users, Stethoscope, GraduationCap, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 
 const programs = [
@@ -106,12 +107,12 @@ export default function FeaturedProgramsSection() {
 					viewport={{ once: true }}
 					className="mt-12 text-center"
 				>
-					<a
-						href="#all-programs"
+					<Link
+						to="/programs"
 						className="inline-flex items-center justify-center bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
 					>
 						Explore All Programs
-					</a>
+					</Link>
 				</motion.div>
 			</div>
 		</section>
