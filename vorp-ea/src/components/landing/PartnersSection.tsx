@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { Link } from "react-router-dom";
 import undpLogo from "/src/assets/logos/undp-logo.svg";
 import whoLogo from "/src/assets/logos/who-logo.svg";
 //import oxfamLogo from "/src/assets/logos/oxfam-logo.svg";
@@ -136,12 +137,12 @@ export default function PartnersSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <a
-            href="#partner-with-us"
+          <Link
+            to="/partner-with-us"
             className="inline-flex items-center justify-center bg-green-700 md:bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition duration-300"
           >
             Become a Partner
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

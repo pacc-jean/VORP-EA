@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import missionImage from "../../assets/images/mission-image.jpg";
+import { Link } from "react-router-dom";
 
 export default function StatementSection() {
   return (
@@ -33,13 +34,13 @@ export default function StatementSection() {
               every person has equitable access to resources and opportunities.
             </p>
           </div>
-          <a
-            href="#our-story"
+          <Link
+            to="/history"
             className="inline-flex items-center text-green-500 font-medium mt-6 hover:underline group"
           >
             Read Our Story
             <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </Link>
         </motion.div>
 
         {/* Right: Hero Image */}

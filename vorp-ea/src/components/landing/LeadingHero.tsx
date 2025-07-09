@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { trackEvent } from "../../lib/analytics";
+import { Link } from "react-router-dom";
 
 export default function LeadingHero() {
   return (
@@ -30,8 +31,8 @@ export default function LeadingHero() {
             Empowering diverse communities through reconciliation, development, and advocacy
           </p>
           <div className="flex gap-6 flex-wrap sm:flex-nowrap">
-            <a
-              href="#"
+            <Link
+              to="/donate"
               onClick={() =>
                 trackEvent({
                   action: "click_hero_button",
@@ -42,9 +43,9 @@ export default function LeadingHero() {
               className="bg-gray-900 md:bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 text-xm md:text-lg rounded-md font-semibold shadow transition duration-300 inline-flex items-center gap-1"
             >
               Support Our Work <span className="text-lg md:text-2xl">&#x203A;</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/our-work"
               onClick={() =>
                 trackEvent({
                   action: "click_hero_button",
@@ -55,7 +56,7 @@ export default function LeadingHero() {
               className="bg-green-700 hover:bg-green-900 text-white px-4 py-2 text-xm md:text-lg rounded-md font-semibold shadow transition duration-300 inline-flex items-center gap-1"
             >
               Learn Our Work <span className="text-lg md:text-2xl">&#x203A;</span>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
