@@ -4,7 +4,7 @@ export default function WorkWithUsHero() {
   return (
     <section
       className="relative w-full h-[100vh] md:h-[140vh] bg-cover bg-center flex items-center justify-center text-white"
-      style={{ backgroundImage: "url('/work-hero.jpg')" }}
+      style={{ backgroundImage: "url('/work-with-us-hero.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/50" />
 
