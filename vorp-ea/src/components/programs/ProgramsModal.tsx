@@ -94,7 +94,7 @@ export default function ProgramsModal({
     <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
       <div
         ref={modalRef}
-        className="relative bg-white rounded-2xl shadow-xl w-full max-w-6xl h-[85vh] flex flex-col md:flex-row overflow-hidden"
+        className="relative bg-white rounded-2xl shadow-xl w-full max-w-6xl h-[75vh] md:h-[90vh] flex flex-col md:flex-row overflow-hidden"
       >
         {/* Close Button */}
         <button
