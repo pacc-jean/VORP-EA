@@ -4,7 +4,7 @@ import { FaTiktok } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-sm pt-12 pb-6 px-6">
+    <footer className="bg-white text-sm pt-12 pb-16 md:pb-6 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Top */}
         <div className="flex flex-col md:flex-row justify-between pb-6">
