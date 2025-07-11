@@ -30,12 +30,12 @@ export default function Footer() {
           <div className="flex-1 px-4 pt-8 md:pt-0">
             <h4 className="text-black font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-green-700">Home</Link></li>
-              <li><Link to="/about" className="hover:text-green-700">About Us</Link></li>
-              <li><Link to="/programs" className="hover:text-green-700">Programs</Link></li>
-              <li><Link to="/impact" className="hover:text-green-700">Impact</Link></li>
-              <li><Link to="/work-with-us" className="hover:text-green-700">Work with Us</Link></li>
-              <li><Link to="/donate" className="hover:text-green-700">Donate</Link></li>
+              <li><Link to="/" className="hover:text-green-700 hover:underline">Home</Link></li>
+              <li><Link to="/about" className="hover:text-green-700 hover:underline">About Us</Link></li>
+              <li><Link to="/programs" className="hover:text-green-700 hover:underline">Programs</Link></li>
+              <li><Link to="/impact" className="hover:text-green-700 hover:underline">Impact</Link></li>
+              <li><Link to="/work-with-us" className="hover:text-green-700 hover:underline">Work with Us</Link></li>
+              <li><Link to="/donate" className="hover:text-green-700 hover:underline">Donate</Link></li>
             </ul>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@vorp-ea.org"
-                  className="hover:text-green-700"
+                  className="hover:text-green-700 hover:underline"
                 >
                   info@vorp-ea.org
                 </a>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:programs@vorp-ea.org"
-                  className="hover:text-green-700"
+                  className="hover:text-green-700 hover:underline"
                 >
                   programs@vorp-ea.org
                 </a>
@@ -65,7 +65,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:partners@vorp-ea.org"
-                  className="hover:text-green-700"
+                  className="hover:text-green-700 hover:underline"
                 >
                   partners@vorp-ea.org
                 </a>
@@ -73,7 +73,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:careers@vorp-ea.org"
-                  className="hover:text-green-700"
+                  className="hover:text-green-700 hover:underline"
                 >
                   careers@vorp-ea.org
                 </a>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:donations@vorp-ea.org"
-                  className="hover:text-green-700"
+                  className="hover:text-green-700 hover:underline"
                 >
                   donations@vorp-ea.org
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:support@vorp-ea.org"
-                  className="hover:text-green-700"
+                  className="hover:text-green-700 hover:underline"
                 >
                   support@vorp-ea.org
                 </a>
