@@ -20,7 +20,7 @@ export default function StayInTheLoop() {
         {/* Left */}
         <div className="md:max-w-xl">
           <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4">
-            Follow the <span className="italic text-orange-400">Journey</span>
+            Follow the <span className="italic text-green-600">Journey</span>
           </h2>
           <p className="text-lg text-gray-200">
             Stay in the loop as we shape the future of reconciliation, rights, and inclusion across East Africa.
@@ -66,7 +66,7 @@ export default function StayInTheLoop() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-orange-400 hover:bg-orange-500 text-black px-5 py-3 rounded-md font-semibold"
+              className="bg-green-700 md:bg-green-400 hover:bg-green-700 text-black px-5 py-3 rounded-md font-semibold"
             >
               Subscribe
             </button>

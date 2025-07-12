@@ -20,7 +20,7 @@ export default function NewsletterSignup() {
         {/* Left: Text Content */}
         <div className="md:max-w-xl">
           <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4">
-            Stay <span className="text-orange-400 italic">Connected</span>
+            Stay <span className="text-green-600 italic">Connected</span>
           </h2>
           <p className="text-lg text-gray-200">
             Get updates on community stories, peace efforts, and opportunities with our monthly Newsletter.
@@ -67,7 +67,7 @@ export default function NewsletterSignup() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-orange-400 hover:bg-orange-500 text-black px-5 py-3 rounded-md font-semibold"
+              className="bg-green-700 md:bg-green-400 hover:bg-green-700 text-black px-5 py-3 rounded-md font-semibold"
             >
               Subscribe
             </button>
