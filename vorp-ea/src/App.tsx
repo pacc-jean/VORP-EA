@@ -14,6 +14,7 @@ import ProgramsPage from "./pages/ProgramsPage";
 import OurWorkPage from "./pages/OurWorkPage";
 import OurImpactPage from "./pages/OurImpactPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import HistoryPage from "./pages/HistoryPage";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/our-work" element={<OurWorkPage />} />
         <Route path="/our-impact" element={<OurImpactPage />} />
         <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/history" element={<HistoryPage />} />
       </Routes>
       <Footer />
       <Analytics />
