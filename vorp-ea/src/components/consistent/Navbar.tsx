@@ -37,7 +37,7 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
     const location = useLocation();
-    const solidRoutes = ["/about"]; // Solid navbar routes here
+    const solidRoutes = ["/about-us"]; // Solid navbar routes here
     const isSolidPage = solidRoutes.includes(location.pathname);
 
     useEffect(() => {
