@@ -12,6 +12,7 @@ import LearnSharePage from "./pages/LearnSharePage";
 import PartnerWithUsPage from "./pages/PartnerWithUsPage";
 import ProgramsPage from "./pages/ProgramsPage";
 import OurWorkPage from "./pages/OurWorkPage";
+import OurImpactPage from "./pages/OurImpactPage";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/partner-with-us" element={<PartnerWithUsPage />} />
         <Route path="/programs" element={<ProgramsPage />} />
         <Route path="/our-work" element={<OurWorkPage />} />
+        <Route path="/our-impact" element={<OurImpactPage />} />
       </Routes>
       <Footer />
       <Analytics />

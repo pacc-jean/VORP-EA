@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
 import doubleQuotes from "../../assets/icons/double-quotes.png";
 import { stories } from "../../assets/community-stories";
-import { trackEvent } from "../../lib/analytics";
+import { HashLink } from "react-router-hash-link";
 
 export default function StoriesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -36,26 +36,19 @@ export default function StoriesSection() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-16 gap-8 px-4">
           <div className="w-full md:w-auto">
             <h2 className="text-4xl md:text-7xl font-serif font-semibold text-black leading-tight">
-              Community Stories: <br/> <em className="italic">"Stories From The Field"</em>
+            Beneficiary Voices: <br/> <em className="italic">"Impact Told by the People"</em>
             </h2>
           </div>
           <div className="max-w-xl text-lg text-gray-800">
             <p className="mb-4">
-              Hear directly from those we serve. Explore how individuals overcome incredible
-              challenges, rebuild their lives, and contribute to their communities.
+              Stories from real people in real communities. Discover how lives are shifting from hardship to hope through VORP-EA's programs.
             </p>
-            <button
-              onClick={() =>
-                trackEvent({
-                  action: "click",
-                  category: "CTA",
-                  label: "View All Resilience Stories",
-                })
-              }
+            <HashLink
+              to="/our-impact#beneficiary-voices"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-700 text-white font-medium px-5 py-3 rounded-md transition"
             >
               View All <span className="text-lg"><ChevronRight size={24} /></span>
-            </button>
+            </HashLink>
           </div>
         </div>
 
