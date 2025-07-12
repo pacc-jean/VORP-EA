@@ -27,7 +27,6 @@ const navItems = [
             { name: "About Us", path: "/about" },
             { name: "Our History", path: "/history" },
             { name: "Our Team", path: "/team" },
-            { name: "Our Partners", path: "/partners" },
         ],
     },
 ];
