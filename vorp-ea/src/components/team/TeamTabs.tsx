@@ -40,7 +40,7 @@ const members: Member[] = [
   {
     name: "Rugaruza Honneur",
     role: "Treasurer",
-    bio: " Habari zenu! Mimi ni Rugaruza honneur mugabe mukimbizi kutoka DR/Congo.Mimi ni volunteer Na VORP-EA. Vorp-ea imenisaidia kuwa mumoja Wawa volunteer nakupewa ujuzi wakusoma Ila nami niweze kufunza wengine  ikiwa Ni wa kenya Pia nawakimbizi wengine Wawa Congo tunaendelea kusema VORP- EA nishirika rimetusaidia kufika kijijini kufunza watu mambo ya Afia , mambo ya savings nambo Na kusoma waweze kuendelesha Maisha usaidizi umetuwezesha nasisi kusaidia wengine.",
+    bio: "Hello! I am Rugaruza Honneur Mugabe a refugee from DR/Congo. I am a volunteer here at VORP-EA. VORP-EA has helped me become one of them and provided me with the skills to study so that I can teach others. VORP-EA is an organization that has helped us reach villages and teach people about health, saving and how to better their lives.",
     image: honneurImg,
     category: "volunteers",
     twitterUrl: "https://twitter.com/honneur_rugaruza",
