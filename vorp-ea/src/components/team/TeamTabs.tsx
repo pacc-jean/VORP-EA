@@ -21,7 +21,7 @@ interface Member {
 const members: Member[] = [
   {
     name: "Flavian Ndenga",
-    role: "Field Officer",
+    role: "Business Administrator",
     bio: "My name is Flavian Ndenga, a Business Administration Specialist with experience in non-profit operations, program support, and organizational management. Adept at coordinating administrative processes, optimizing resource allocation, and ensuring compliance with donor and internal policies. I demonstrate strong skills in financial oversight, procurement, logistics, and human resources management.",
     image: flavianImg,
     category: "volunteers",
