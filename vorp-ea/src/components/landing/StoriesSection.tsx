@@ -112,9 +112,11 @@ export default function StoriesSection() {
                           overflow-hidden
                         `}
                       >
-                        <button className="bg-black text-white text-sm px-4 py-2 rounded-md w-full">
-                          Read More
-                        </button>
+                        <HashLink to="/our-impact#beneficiary-voices" smooth>
+                          <button className="bg-black text-white text-sm px-4 py-2 rounded-md w-full">
+                            Read More
+                          </button>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
