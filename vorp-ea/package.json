@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/generate-sitemap.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -30,7 +30,8 @@
     "react-photo-view": "^1.2.7",
     "react-router-dom": "^7.6.0",
     "react-router-hash-link": "^2.4.3",
-    "react-swipeable": "^7.0.2"
+    "react-swipeable": "^7.0.2",
+    "sitemap": "^8.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
