@@ -1,42 +1,93 @@
-import { Users, Stethoscope, GraduationCap, Leaf } from "lucide-react";
+import { Users, Stethoscope, GraduationCap, HandCoins } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
-const programs = [
+type Program = {
+	icon: React.ReactNode;
+	title: string;
+	number: number;
+	suffix?: string;
+	text: string;
+	color: string;
+};
+
+const programs: Program[] = [
 	{
 		icon: <Users className="w-8 h-8 text-white" />,
-		title: "Community Dialogue & Reconciliation",
-		number: 1200,
+		title: "Free Vocational Training",
+		number: 10,
 		suffix: "",
-		text: "local mediators trained since 2017.",
+		text: "Women from Kasarani currently receiving vocational training in bead-work and tailoring.",
 		color: "bg-indigo-600",
 	},
 	{
 		icon: <Stethoscope className="w-8 h-8 text-white" />,
-		title: "Health & Well-Being",
-		number: 25000,
+		title: "Physical and Mental Health Awareness",
+		number: 250,
 		suffix: "+",
-		text: "consultations via mobile clinics.",
+		text: "People in marginalized areas in Kenya reached through our initiatives to spread awareness on sexual, reproductive, and mental health.",
 		color: "bg-rose-600",
 	},
 	{
 		icon: <GraduationCap className="w-8 h-8 text-white" />,
-		title: "Livelihoods & Learning",
-		number: 5000,
+		title: "Education & Mentoring",
+		number: 270,
 		suffix: "+",
-		text: "graduates from vocational training.",
-		color: "bg-emerald-600",
+		text: "Students from MWiki Community School currently under the mentorship of our agents in the field.",
+		color: "bg-emerald-900",
 	},
 	{
-		icon: <Leaf className="w-8 h-8 text-white" />,
-		title: "Environmental Resilience",
-		number: 100000,
-		suffix: "",
-		text: "trees planted and solar pumps piloted.",
+		icon: <HandCoins className="w-8 h-8 text-white" />,
+		title: "VSLA & Livelihoods",
+		number: 20,
+		suffix: "+",
+		text: "Individuals receiving training on Voluntary Saving & Loaning Activities to help improve livelihoods within low-income communities.",
 		color: "bg-yellow-500 text-black",
 	},
 ];
+
+function ProgramCard({ program, index }: { program: Program; index: number }) {
+	const { ref, inView } = useInView({ triggerOnce: true });
+
+	return (
+		<motion.div
+			ref={ref}
+			initial={{ opacity: 0, y: 20 }}
+			animate={inView ? { opacity: 1, y: 0 } : {}}
+			transition={{ delay: index * 0.1, duration: 0.6 }}
+			className="relative p-6 rounded-2xl shadow-xl min-h-[260px] backdrop-blur-md bg-white/10 border border-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden group"
+		>
+			{/* Glossy base overlay */}
+			<span className="pointer-events-none absolute inset-0 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-[4px] z-0" />
+
+			{/* Card Content */}
+			<div className="relative z-20">
+				<div className={`w-14 h-14 flex items-center justify-center rounded-full ${program.color} mb-5 shadow-md`}>
+					{program.icon}
+				</div>
+				<h3 className="text-2xl font-bold text-white mb-2 leading-snug tracking-tight">
+					{program.title}
+				</h3>
+				<p className="text-white/80 text-lg">
+					<span className="text-black text-xl font-extrabold">
+						{inView && (
+							<CountUp
+								start={0}
+								end={program.number}
+								duration={2}
+								separator=","
+								suffix={program.suffix}
+							/>
+						)}{" "}
+					</span>
+					{program.text}
+				</p>
+			</div>
+		</motion.div>
+	);
+}
 
 export default function FeaturedProgramsSection() {
 	return (
@@ -61,41 +112,7 @@ export default function FeaturedProgramsSection() {
 				{/* Program Grid */}
 				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-2">
 					{programs.map((program, index) => (
-						<motion.div
-							key={index}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ delay: index * 0.1, duration: 0.6 }}
-							viewport={{ once: true }}
-							className="relative p-6 rounded-2xl shadow-xl min-h-[260px] backdrop-blur-md bg-white/10 border border-white/20 hover:border-white/30 transition-all duration-300 overflow-hidden group"
-						>
-							{/* Glossy base overlay */}
-							<span className="pointer-events-none absolute inset-0 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-[4px] z-0" />
-
-							{/* Card Content */}
-							<div className="relative z-20">
-								<div className={`w-14 h-14 flex items-center justify-center rounded-full ${program.color} mb-5 shadow-md`}>
-									{program.icon}
-								</div>
-								<h3 className="text-2xl font-bold text-white mb-2 leading-snug tracking-tight">
-									{program.title}
-								</h3>
-								<p className="text-white/80 text-lg">
-									<span className="text-black text-xl font-extrabold">
-										<CountUp
-											start={0}
-											end={program.number}
-											duration={2}
-											separator=","
-											suffix={program.suffix}
-											enableScrollSpy
-											scrollSpyOnce
-										/>{" "}
-									</span>
-									{program.text}
-								</p>
-							</div>
-						</motion.div>
+						<ProgramCard key={index} program={program} index={index} />
 					))}
 				</div>
 
