@@ -1,18 +1,18 @@
-import undpImg from "../../assets/impact/undp.jpg";
-import oxfamImg from "../../assets/impact/oxfam.jpg";
+import rukaImg from "../../assets/impact/ruka-partnership.jpg";
+import kcbImg from "../../assets/impact/kasarani-boxing-club-partnership.jpg";
 
 const stories = [
   {
-    title: "UNDP & VORP-EA",
+    title: "RUKA",
     summary:
-      "Together we co-designed drought resilience programs in Turkana, integrating community feedback, climate data, and indigenous knowledge systems.",
-    image: undpImg,
+      "Together we work towards mentoring youth in underprivileged communities focusing on the importance of education and social awareness.",
+    image: rukaImg,
   },
   {
-    title: "Oxfam Partnership",
+    title: "Kasarani Boxing Club",
     summary:
-      "We collaborated to host gender-responsive peace forums in Somalia, blending civic dialogue with arts-based healing practices.",
-    image: oxfamImg,
+      "We collaborated to support young lives in Kasarani with ambition and the fire to fight for better lives.One glove, one punch at a time.",
+    image: kcbImg,
   },
 ];
 
@@ -46,12 +46,6 @@ export default function ImpactStories() {
                 <p className="text-gray-700 text-sm flex-1">
                   {story.summary}
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-block text-green-600 hover:underline"
-                >
-                  Read more
-                </a>
               </div>
             </div>
           ))}
