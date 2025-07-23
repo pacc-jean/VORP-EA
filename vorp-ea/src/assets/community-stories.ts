@@ -8,36 +8,63 @@ export type StoryType = {
 
 export const stories: StoryType[] = [
   {
-    name: "Nicole Rozzie",
+    name: "Community Initiative",
     excerpt:
       "This opportunity is a big one for us. We're finally able to share our voices with the world.",
-    fullStory: `This opportunity has opened doors I never thought possible. Growing up, our community’s voice was often ignored, but now, through VORP-EA, we are being heard. I’ve found my courage, my platform, and my purpose.`,
-    image: new URL('@/assets/images/story-rozzie.jpg', import.meta.url).href,
-    location: "Mombasa, Kenya",
+    fullStory: `Sharing Our Voices
+
+For too long, our stories stayed buried — unheard and unseen. But when VORP-EA opened their platform, everything changed.
+
+For the first time, we stood not as statistics, but as storytellers. Young mothers, local youth, even elders — all finally had the mic.
+
+"This opportunity is a big one for us," said Brian, a youth leader. "We're finally able to share our voices with the world."
+
+Now, the world is listening. And we’re just getting started.
+`,
+    image: new URL('@/assets/images/kiambio.jpg', import.meta.url).href,
+    location: "Nairobi, Kenya",
   },
   {
-    name: "Ghost Team",
+    name: "Kandara CH Visit",
     excerpt:
-      "I am content with what I have. I do not need riches, just peace and dignity.",
-    fullStory: `For years, I lived in the shadows, hiding from violence and poverty. VORP-EA showed me that peace isn't just a dream — it's something we can create. Dignity and community have returned to my life.`,
-    image: new URL('@/assets/images/story-ghost.jpg', import.meta.url).href,
-    location: "Garissa, Kenya",
+      "A day to remember, VORP-EA shared more than a meal they shared hope and kindness.",
+    fullStory: `A Day to Remember
+
+It started like any other afternoon in Kasarani — until VORP-EA arrived. Not with speeches or headlines, but with presence. They shared warm meals, yes, but more than that — they shared hope.
+
+Volunteers sat with us, listened to our stories, and reminded us we matter. Old Mama Achieng held her parcel tight and whispered, "This isn’t just food. It’s dignity."
+
+That day, VORP-EA didn’t just feed bellies — they lifted spirits. In a world that often forgets the forgotten, they reminded us we are seen.`,
+    image: new URL('@/assets/images/kandara.jpg', import.meta.url).href,
+    location: "Murang'a, Kenya",
   },
   {
-    name: "Raider",
+    name: "SRH Session",
     excerpt:
-      "Tonight is the first night I will sleep without fear in many years.",
-    fullStory: `Conflict robbed me of sleep and security. But now, through the reconciliation dialogues led by VORP-EA, my village has found healing. I can finally rest, knowing tomorrow holds hope instead of fear.`,
-    image: new URL('@/assets/images/story-raider.jpg', import.meta.url).href,
-    location: "Lodwar, Kenya",
+      "The kind donations of sanitary towels was only topped by the Sexual and Reproductive Health talk.",
+    fullStory: `More Than Just Donations
+
+At first, it was the generous gift of sanitary towels that brought smiles to the girls. But what stayed with them longer was the honest, empowering conversation that followed.
+
+"The kind donations of sanitary towels was only topped by the Sexual and Reproductive Health talk," one student shared with a quiet smile.
+
+It wasn’t just supplies — it was knowledge, dignity, and the start of open dialogue in a place where silence once ruled.
+`,
+    image: new URL('@/assets/images/srh-session.jpg', import.meta.url).href,
+    location: "Kasarani, Kenya",
   },
   {
-    name: "Jalia",
+    name: "Kasarani Boxing Club",
     excerpt:
-      "In French they say, ‘I am reborn.’ That is what this feels like for me.",
-    fullStory: `VORP-EA’s menstrual health program changed my life. I no longer miss school during my period. I feel empowered, educated, and ready to help other girls rise. I truly feel reborn.`,
-    image: "/images/jalia.jpg",
+      "A gift of gloves. Gloves to punch through to brighter futures for all the discplined young lives still fighting.",
+    fullStory: `Punching Through Barriers
+
+A simple gift — gloves. But to the youth of Kasarani Boxing Club, they were more than equipment.
+
+"A gift of gloves. Gloves to punch through to brighter futures for all the disciplined young lives still fighting," Coach Ian remarked, eyes shining with pride.
+
+Each pair carried a message: you’re seen, you matter, and your fight is worth it.`,
+    image: new URL('@/assets/images/kasarani-boxing-club.jpg', import.meta.url).href,
     location: "Kampala, Uganda",
   },
-  // You can add more stories following this structure
 ]
