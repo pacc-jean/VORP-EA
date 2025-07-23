@@ -20,7 +20,7 @@ const routes = [
 
 async function generateSitemap() {
   const sitemap = new SitemapStream({ hostname: BASE_URL });
-  const writeStream = createWriteStream(resolve('public/sitemap.xml'));
+  const writeStream = createWriteStream(resolve('dist/sitemap.xml'));
 
   sitemap.pipe(writeStream);
 
@@ -36,7 +36,7 @@ async function generateSitemap() {
   sitemap.end();
 
   await streamToPromise(sitemap);
-  console.log('Sitemap generated at public/sitemap.xml');
+  console.log('Sitemap generated at dist/sitemap.xml');
 }
 
 generateSitemap().catch(console.error);
