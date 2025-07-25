@@ -126,7 +126,7 @@ export default function FeaturedProgramsSection() {
 				>
 					<Link
 						to="/programs"
-						className="inline-flex items-center justify-center bg-green-500 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+						className="inline-flex items-center justify-center bg-green-500 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300"
 					>
 						Explore All Programs
 					</Link>
