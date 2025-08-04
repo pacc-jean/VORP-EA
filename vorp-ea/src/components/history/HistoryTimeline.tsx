@@ -1,7 +1,7 @@
 const steps = [
   {
-    title: "2023–2024",
-    description: "Community consultations in Kilimani, Embu, and Turkana shaped our core pillars.",
+    title: "2024–2025",
+    description: "Community consultations in Kilimani, Murang'a, and Kasarani shaped our core pillars.",
   },
   {
     title: "October 2024",
@@ -9,11 +9,11 @@ const steps = [
   },
   {
     title: "Early 2025",
-    description: "Rolled out “Tambulika Festival” in Nairobi, reaching 500+ youth artists.",
+    description: "Rolled out VSLA training for aour field agents in Eastleigh, Nairobi.",
   },
   {
     title: "Mid 2025",
-    description: "Expanded operations to Mombasa and Kisumu through social protection pilots.",
+    description: "Rolled out Community training for women in Mwiki.",
   },
 ];
 

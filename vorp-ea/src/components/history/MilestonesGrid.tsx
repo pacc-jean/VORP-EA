@@ -1,10 +1,6 @@
 const milestones = [
-  { year: "2015", detail: "Founded by peace practitioners in Nairobi." },
-  { year: "2017", detail: "First reconciliation workshop in Turkana County." },
-  { year: "2019", detail: "Launched mobile health clinics in arid regions." },
-  { year: "2021", detail: "Expanded to Uganda, Tanzania, South Sudan, Somalia." },
-  { year: "2023", detail: "Secured first multi-year grant from USAID." },
-  { year: "2025", detail: "Trained over 1,200 mediators and served 25,000+ in health and relief." },
+  { year: "2025", detail: "Successfully registered the organisation in Kenya" },
+  { year: "2025", detail: "Acquired our first office/training space in Mwiki, Kasarani." },
 ];
 
 export default function MilestonesGrid() {
