@@ -63,7 +63,7 @@ export default function Navbar() {
     return (
         <header
             className={`hidden md:block fixed w-full top-0 z-50 transition-colors duration-300 ${
-                scrolled ? "bg-white shadow-sm" : "bg-transparent"
+                scrolled ? "bg-white shadow-sm border-b border-black" : "bg-transparent"
             }`}
         >
             <nav className="relative" onMouseLeave={() => setHoveredMenu(null)}>
@@ -150,9 +150,9 @@ export default function Navbar() {
                             onMouseLeave={() => setHoveredMenu(null)}
                         >
                             <div
-                                className={`px-6 flex justify-center space-x-16 transition-colors duration-300 ${
+                                className={`px-6 flex justify-center space-x-16 transition-colors duration-300 rounded-b-3xl pb-6 ${
                                     scrolled
-                                        ? "bg-white shadow-sm border-gray-200"
+                                        ? "bg-white shadow-lg border-gray-200"
                                         : "bg-transparent border-none"
                                 }`}
                             >
